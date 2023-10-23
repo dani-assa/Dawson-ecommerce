@@ -1,0 +1,29 @@
+:root {
+  --colorPrincipal: #D8AA54;
+}
+
+main {
+  margin-top: 50px;
+}
+
+#btnLogin {
+  background-color: var(--colorPrincipal);
+  border: 1px solid var(--colorPrincipal);
+  color: #000000;
+  font-weight: 600;
+}
+
+#btnRegister {
+  background-color: var(--colorPrincipal);
+  border: 1px solid var(--colorPrincipal);
+  color: #000000;
+  font-weight: 600;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}

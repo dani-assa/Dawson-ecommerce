@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+    "email": "carlosbusi@gmail.com",
+    "name": "alejandro",
+    "lastName": "busi",
+    "password": "Asd12345",
+    "role": "ADMIN"
+    },
+    {
+    "email": "dani.assa@gmail.com",
+    "name": "Daniel",
+    "lastName": "Assa",
+    "password": "Dani12345",
+    "role": "CLIENT"
+    }
+  ]
+}
