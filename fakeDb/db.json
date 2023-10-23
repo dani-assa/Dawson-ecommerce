@@ -2,8 +2,8 @@
   "users": [
     {
     "email": "carlosbusi@gmail.com",
-    "name": "alejandro",
-    "lastName": "busi",
+    "name": "Alejandro",
+    "lastName": "Busi",
     "password": "Asd12345",
     "role": "ADMIN"
     },

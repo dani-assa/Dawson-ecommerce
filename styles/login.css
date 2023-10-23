@@ -5,7 +5,7 @@
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .btnLogin {
@@ -37,19 +37,40 @@ main {
   background-color: var(--colorSecond);
   border: 1px solid var(--colorSecond);
   color: #000000;
-  font-weight: 600;
 }
 
-.btnCerrarSesion {
-  background-color: var(--colorPrimary) !important;
-  border: 1px solid var(--colorPrimary) !important;
-  color: #000000 !important;
-  font-weight: 600 !important;
+#btnCerrarSesion {
+  background-color: var(--colorPrimary);
+  border: 1px solid var(--colorPrimary);
+  color: #000000;
 }
 
-.btnAdmin {
-  background-color: var(--colorPrimary) !important;
-  border: 1px solid var(--colorPrimary) !important;
-  color: #000000 !important;
-  font-weight: 600 !important;
+#btnAdmin {
+  background-color: var(--colorPrimary);
+  border: 1px solid var(--colorPrimary);
+  color: #000000;
 }
+
+.bx {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+#showPassword {
+  position: absolute;
+  left: 320px;
+  bottom: 3px;
+}
+
+
+@media (min-width: 992px) {
+  #showPassword {
+    left: 410px;
+  }
+  
+}
+
