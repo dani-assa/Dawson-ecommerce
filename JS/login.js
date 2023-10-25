@@ -1,11 +1,12 @@
 import navbar from "../Components/navbar.js";
 import { getFormData } from "./utils.js";
-import db from '../fakeDb/db.json' assert {type: 'json'};
-
+import { endpoints } from "../utils/endpoints.js";
+import footer1 from "../Components/footer.js";
 
 document.addEventListener('DOMContentLoaded', () => navbar ());
+document.addEventListener('DOMContentLoaded', () => footer1 ());
 
-const login = (e) => {
+const login = async(e) => {
   e.preventDefault();
 
   const emailInput = document.getElementById('email');
@@ -15,22 +16,27 @@ const login = (e) => {
 
 
   const formData = getFormData(e)
-  const userExist = db.users.find((user) => user.email === formData.email);
-  if (!userExist) {
-    emailInput.classList.add('is-invalid');
-    passwordInput.classList.add('is-invalid');
-
-    return;
+  try {
+    const response = await fetch(`${endpoints.users}?email=${formData.email}`);
+    const data = await response.json();
+    const [user] = data;
+    if (!user) {
+      emailInput.classList.add('is-invalid');
+      passwordInput.classList.add('is-invalid');
+      return;
+    }
+    if (formData.password !== user.password) {
+      emailInput.classList.add('is-invalid');
+      passwordInput.classList.add('is-invalid');
+      return;
+    }
+  
+    delete user.password;
+    localStorage.setItem('user', JSON.stringify(user));
+    window.location.replace('../index.html')
+  } catch (error) {
+    console.error(error);
   }
-  if (formData.password !== userExist.password) {
-    emailInput.classList.add('is-invalid');
-    passwordInput.classList.add('is-invalid');
-    return;
-  }
-
-  delete userExist.password;
-  localStorage.setItem('user', JSON.stringify(userExist));
-  window.location.replace('../index.html')
 };
 
 
@@ -43,12 +49,9 @@ const icon = document.getElementById('showPassword');
 const showPassword = () => {
   if (pass.type === "password") {
     pass.type = "text";
-    icon.classList.add('bx-show-alt')
-    icon.classList.remove('bxs-hide')
   } else {
     pass.type = "password";
-    icon.classList.remove('bx-show-alt')
-    icon.classList.add('bxs-hide')
+    
   }
 }
 
