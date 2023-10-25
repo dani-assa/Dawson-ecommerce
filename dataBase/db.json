@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "name": "José",
+      "lastName": "Gomez",
+      "password": "Asd12345",
+      "id": 1,
+      "role": "CLIENT"
+    },
+    {
+      "email": "dani.assa@gmail.com",
+      "name": "Daniel",
+      "lastName": "Assa",
+      "password": "Dani12345",
+      "id": 2,
+      "role": "ADMIN"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Remera Hanley",
+      "price": 5000,
+      "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
+      "categories": [
+        "Remeras",
+        "Verano"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sweater cuello cruzado",
+      "price": 20000,
+      "photo": "https://i.ibb.co/rH8J8v5/20190717-125830.jpg",
+      "categories": [
+        "Sweater",
+        "Invierno"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Short de baño (naranja)",
+      "price": 12500,
+      "photo": "https://i.ibb.co/S3Y3dJt/IMG-20191217-002300.jpg",
+      "categories": [
+        "Short de baño",
+        "Verano"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Zapato suela",
+      "price": 35000,
+      "photo": "https://i.ibb.co/wNtM4Zj/20190721-120609.jpg",
+      "categories": [
+        "Calzado",
+        "Zapatos"
+      ]
+    }
+  ]
+}
