@@ -15,6 +15,14 @@
       "password": "Dani12345",
       "id": 2,
       "role": "ADMIN"
+    },
+    {
+      "email": "dc0000@gmail.com",
+      "name": "Daniel",
+      "lastName": "Cabral",
+      "password": "1234",
+      "id": 3,
+      "role": "ADMIN"
     }
   ],
   "products": [
@@ -26,7 +34,8 @@
       "categories": [
         "Remeras",
         "Verano"
-      ]
+      ],
+      "available": true
     },
     {
       "id": 2,
@@ -36,7 +45,8 @@
       "categories": [
         "Sweater",
         "Invierno"
-      ]
+      ],
+      "available": true
     },
     {
       "id": 3,
@@ -46,7 +56,8 @@
       "categories": [
         "Short de baño",
         "Verano"
-      ]
+      ],
+      "available": true
     },
     {
       "id": 4,
@@ -56,7 +67,8 @@
       "categories": [
         "Calzado",
         "Zapatos"
-      ]
+      ],
+      "available": true
     }
   ]
 }
