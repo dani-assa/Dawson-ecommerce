@@ -1,16 +1,14 @@
 import navbar from "../Components/navbar.js";
 import footer1 from "../Components/footer.js";
+import { endpoints } from "../utils/endpoints.js";
 const $tbody = document.getElementById("tbody");
 
-const URL_PRODUCTS = "http://localhost:3000/products";
-
 const getProducts = async () => {
-  const response = await fetch(`${URL_PRODUCTS}`);
+  const response = await fetch(`${endpoints.products}`);
   const json = await response.json();
   return json;
 };
 
-//!Sin imagen por ahora - Estoy con datos
 const renderProducts = async () => {
   const products = await getProducts();
   products.forEach((product) => {
@@ -18,7 +16,7 @@ const renderProducts = async () => {
     $tr.innerHTML = `
         <td>${product.name}</td>
         <td>${product.price}</td>
-        <td><img src="-" style="width: 100px; height: 50px"></td>
+        <td><img src="${product.photo}" style="width: 100px; height: 50px"></td>
         <td>${product.categories.join(" - ")}</td>
         <td>
             <button class="btn btn-danger" id="${product.id}">Borrar</button>
@@ -28,6 +26,35 @@ const renderProducts = async () => {
     $tbody.append($tr);
   });
 };
+
+const postProduct = async (data) => {
+  const { name, price, photo, category, season } = data;
+
+  try {
+    const response = await fetch(`${endpoints.products}`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: name.value,
+        price: parseInt(price.value),
+        photo: photo.value,
+        categories: [category.value, season.value],
+        available: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  postProduct(e.target);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   navbar();
