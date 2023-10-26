@@ -1,50 +1,92 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dawson</title>
-  <link rel="stylesheet" href="../styles/login.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-  <header></header>
-  <main>
-    <div class="container">
-      <h2>Iniciar sesión</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-5 mt-5 animate__animated animate__backInDown">
-          <form id="loginForm">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required maxlength="30" minlength="7" name="email">
-              <div class="invalid-feedback animate__animated animate__headShake">
-                Usuario o contraseña incorrecto.
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dawson</title>
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="container">
+        <h2>Iniciar sesión</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-5 mt-5 animate__animated animate__backInDown">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="emailHelp"
+                  required
+                  maxlength="30"
+                  minlength="7"
+                  name="email"
+                />
+                <div
+                  class="invalid-feedback animate__animated animate__headShake"
+                >
+                  Usuario o contraseña incorrecto.
+                </div>
               </div>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control " id="password" name="password" required>
-              <div class="invalid-feedback animate__animated animate__headShake">
-                Usuario o contraseña incorrecto.
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                />
+                <div
+                  class="invalid-feedback animate__animated animate__headShake"
+                >
+                  Usuario o contraseña incorrecto.
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="showPassword"
+                    id="showPassword"
+                  />
+                  <label for="showPassword">Mostrar contraseña</label>
+                </div>
               </div>
-              <div>
-                <input type="checkbox" name="showPassword" id="showPassword">
-                <label for="showPassword">Mostrar contraseña</label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary" id="btnIniciarSesion">Iniciar sesión</button>
-          </form>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="btnIniciarSesion"
+              >
+                Iniciar sesión
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  <footer></footer>
-  <script type="module" src="../JS/login.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+    </main>
+    <footer></footer>
+    <script type="module" src="../JS/login.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
