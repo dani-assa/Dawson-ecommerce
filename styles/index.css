@@ -53,3 +53,28 @@ main {
   color: #000000 !important;
   font-weight: 600 !important;
 }
+
+#login {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+#bodyLogin {
+  background: url('https://i.ibb.co/nD3tfGn/5.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#email, #password{
+  background: transparent;
+  color: #000000;
+}
+
+#email::placeholder, #password::placeholder {
+  color: #000000;
+}
