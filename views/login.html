@@ -19,54 +19,57 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    
   </head>
-  <body>
+  <body id="bodyLogin" class="">
     <header></header>
     <main>
-      <div class="container">
+      <div class="container" id="login">
         <h2>Iniciar sesión</h2>
         <div class="row justify-content-center">
-          <div class="col-lg-5 mt-5 animate__animated animate__backInDown">
+          <div class=" mt-2">
             <form id="loginForm">
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
                 <input
                   type="email"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
+                  placeholder="Email"
                   required
                   maxlength="30"
                   minlength="7"
                   name="email"
                 />
                 <div
-                  class="invalid-feedback animate__animated animate__headShake"
-                >
+                  class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
                   Usuario o contraseña incorrecto.
                 </div>
               </div>
               <div class="mb-3">
-                <label for="password" class="form-label">Contraseña:</label>
                 <input
                   type="password"
                   class="form-control"
                   id="password"
                   name="password"
+                  placeholder="Contraseña"
                   required
                 />
                 <div
-                  class="invalid-feedback animate__animated animate__headShake"
+                  class="invalid-feedback animate__animated animate__headShake mjeIncorrecto"
                 >
                   Usuario o contraseña incorrecto.
                 </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    name="showPassword"
-                    id="showPassword"
-                  />
-                  <label for="showPassword">Mostrar contraseña</label>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="showPassword"
+                      id="showPassword"
+                    />
+                    <label for="showPassword" class="fs-6">Mostrar contraseña</label>
+                  </div>
+                  <a href="#" class=" link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover fs-6 ">Olvidaste la contraseña?</a>
                 </div>
               </div>
               <button
@@ -77,6 +80,16 @@
                 Iniciar sesión
               </button>
             </form>
+          </div>
+        </div>
+        <div class="border-top mt-3 d-flex flex-column justify-content-center">
+          <h6 class="text-center">o inicia sesión con</h6>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-dark me-2"><img style="width: 20px;" src="https://i.ibb.co/f17x8mb/buscar.png" alt="logoGoogle"></button>
+            <button class="btn btn-dark"><img style="width: 20px;" src="https://i.ibb.co/hHVxfL2/meta.png" alt="logoMeta"></button>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <p>Aún no tienes cuenta? <a href="#" class="fw-semibold link-warning">Registrate</a></p>
           </div>
         </div>
       </div>
