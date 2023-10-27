@@ -3,7 +3,7 @@ const footer = document.querySelector('footer');
 const footer1 = () => {
   return (footer.innerHTML = `
   <div class="container">
-  <footer class="d-flex flex-column flex-lg-wrap justify-content-center justify-content-lg-between align-items-center py-3 my-4 border-top">
+  <footer class="d-flex flex-column d-lg-flex flex-lg-row justify-content-center justify-content-lg-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Dawson, Inc</span>
     </div>
