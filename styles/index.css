@@ -53,3 +53,20 @@ main {
   color: #000000 !important;
   font-weight: 600 !important;
 }
+
+#login {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+#bodyLogin {
+  background: url('https://png.pngtree.com/background/20211215/original/pngtree-clothing-mens-clothing-store-shopping-summer-clothing-photography-map-with-map-picture-image_1485281.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+

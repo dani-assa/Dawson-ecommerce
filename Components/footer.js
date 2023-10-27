@@ -3,12 +3,12 @@ const footer = document.querySelector('footer');
 const footer1 = () => {
   return (footer.innerHTML = `
   <div class="container">
-  <footer class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center py-3 my-4 border-top">
+  <footer class="d-flex flex-column flex-lg-wrap justify-content-center justify-content-lg-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Dawson, Inc</span>
     </div>
       <ul class="list-unstyled d-flex align-items-center mt-lg-3">
-        <li class="me-3 "><a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover opacity-75" href="#">Página principal</a></li>
+        <li class="me-3 "><a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover opacity-75" href="#" onclick="window.location.pathname = './index.html'">Página principal</a></li>
         <li><a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover opacity-75" href="#">Sobre nosotros</a></li>
       </ul>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
