@@ -1,6 +1,7 @@
 import navbar from "../Components/navbar.js";
 import footer1 from "../Components/footer.js";
 import { endpoints } from "../utils/endpoints.js";
+import { validateProduct } from "../validations/product-validations.js";
 const $tbody = document.getElementById("tbody");
 const $inputId = document.getElementById("idHidden");
 const $productModal = document.getElementById("productModal");
@@ -47,6 +48,10 @@ const renderProducts = async () => {
 const postProduct = async (data) => {
   const { name, price, photo, category, season } = data;
 
+  const resp = validateProduct(data);
+  if (!resp) {
+    return;
+  }
   try {
     const response = await fetch(`${endpoints.products}`, {
       method: "POST",
@@ -69,6 +74,11 @@ const postProduct = async (data) => {
 
 const updateProduct = async (id, data) => {
   const { name, price, photo, category, season } = data;
+
+  const resp = validateProduct(data);
+  if (!resp) {
+    return;
+  }
 
   try {
     const response = await fetch(`${endpoints.products}/${id}`, {
