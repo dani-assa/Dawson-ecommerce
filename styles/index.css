@@ -65,8 +65,16 @@ main {
 }
 
 #bodyLogin {
-  background: url('https://i.ibb.co/YbY0zsf/Dise-o-sin-t-tulo-11.png') no-repeat;
+  background: url('https://i.ibb.co/nD3tfGn/5.png') no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+#email, #password{
+  background: transparent;
+  color: #000000;
+}
+
+#email::placeholder, #password::placeholder {
+  color: #000000;
+}
