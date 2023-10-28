@@ -24,9 +24,12 @@ const renderProducts = async () => {
       $tr.innerHTML = `
           <td>${product.name}</td>
           <td>${product.price}</td>
-          <td><img src="${
+          <td><button class="btn btn-light lookPhoto" data-bs-toggle="modal" data-bs-target="#photoModal" id="lookPhoto" data-productPhoto="${
             product.photo
-          }" style="width: 100px; height: 50px"></td>
+          }" data-productName="${
+        product.name
+      }"><i class="fa-solid fa-eye" style="color: #d8aa54;"></i></button>
+          </td>
           <td>${product.categories.join(" - ")}</td>
           <td>
               <button class="btn btn-danger" id="eliminar" data-productid="${
@@ -43,6 +46,14 @@ const renderProducts = async () => {
   } catch (error) {
     console.error(error);
   }
+};
+
+const addPhotoToModal = (url, name) => {
+  const $photoModal = document.getElementById("productPhoto");
+  const $photoModalTitle = document.getElementById("photoModalTitle");
+  $photoModalTitle.innerText = name;
+  $photoModal.removeAttribute("src");
+  $photoModal.setAttribute("src", url);
 };
 
 const postProduct = async (data) => {
@@ -154,6 +165,24 @@ document.addEventListener("click", async (e) => {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  if (e.target.matches("#lookPhoto")) {
+    const url = e.target.dataset.productphoto;
+    const name = e.target.dataset.productname;
+    addPhotoToModal(url, name);
+  }
+
+  // * Solución para el problema que causaba al hacer click en el icono
+  // * de fontawesome, lo que causaba que mostrara la imagen anterior al
+  // * hacer click en otro elemento...
+
+  if (e.target.matches(".fa-eye")) {
+    const $parentTr = e.target.closest("tr");
+    const $productPhoto = $parentTr.querySelector(".lookPhoto");
+    const url = $productPhoto.getAttribute("data-productPhoto");
+    const name = $productPhoto.getAttribute("data-productName");
+    addPhotoToModal(url, name);
   }
 });
 
