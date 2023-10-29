@@ -34,10 +34,14 @@ main {
 }
 
 #btnIniciarSesion {
-  background-color: var(--colorSecond);
-  border: 1px solid var(--colorSecond);
+  background-color: var(--colorPrimary);
+  border: 1px solid var(--colorPrimary);
   color: #000000;
   font-weight: 600;
+}
+
+#btnIniciarSesion:hover {
+  background-color: #c58c22;
 }
 
 .btnCerrarSesion {
@@ -55,7 +59,7 @@ main {
 }
 
 #login {
-  width: 420px;
+  width: 350px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(20px);
@@ -65,16 +69,26 @@ main {
 }
 
 #bodyLogin {
-  background: url('https://i.ibb.co/nD3tfGn/5.png') no-repeat;
+  background: url('../Resources/fondoLogin2.webp') no-repeat;
   background-size: cover;
   background-position: center;
+  margin-top: 80px;
 }
 
 #email, #password{
   background: transparent;
-  color: #000000;
 }
 
-#email::placeholder, #password::placeholder {
-  color: #000000;
+#labelPassword, #forgotPassword {
+  font-size: x-small;
 }
+
+@media (min-width: 992px) {
+  #login {
+    width: 420px;
+  }
+  #labelPassword, #forgotPassword {
+    font-size: small;
+  }
+}
+

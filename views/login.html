@@ -19,9 +19,8 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    
   </head>
-  <body id="bodyLogin" class="">
+  <body id="bodyLogin">
     <header></header>
     <main>
       <div class="container" id="login">
@@ -63,20 +62,20 @@
                 <div class="d-flex justify-content-between">
                   <div>
                     <input
+                      class="mt-2"
                       type="checkbox"
                       name="showPassword"
                       id="showPassword"
                     />
-                    <label for="showPassword" class="fs-6">Mostrar contraseña</label>
+                    <label for="showPassword" id="labelPassword">Mostrar contraseña</label>
                   </div>
-                  <a href="#" class=" link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover fs-6 ">Olvidaste la contraseña?</a>
+                  <a href="#" class=" link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover mt-2" id="forgotPassword">Olvidaste la contraseña?</a>
                 </div>
               </div>
               <button
                 type="submit"
-                class="btn btn-primary"
-                id="btnIniciarSesion"
-              >
+                class="btn btn-primary w-100"
+                id="btnIniciarSesion">
                 Iniciar sesión
               </button>
             </form>
