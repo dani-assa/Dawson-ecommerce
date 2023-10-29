@@ -73,7 +73,8 @@ const navbar = () => {
               <li class="nav-item">
                 <a class="btn btn-success btn-sm mb-2 mx-2 btnCerrarSesion" onclick= "
                   localStorage.clear(),
-                  window.location.reload()"
+                  window.location.reload()
+                  window.location.pathname = './index.html'"
                   href="#">Cerrar sesión</a>
               </li>
             </div>

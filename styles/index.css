@@ -59,7 +59,7 @@ main {
 }
 
 #login {
-  width: 420px;
+  width: 350px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(20px);
@@ -69,7 +69,7 @@ main {
 }
 
 #bodyLogin {
-  background: url('../Resources/fondoLogin.webp') no-repeat;
+  background: url('../Resources/fondoLogin2.webp') no-repeat;
   background-size: cover;
   background-position: center;
   margin-top: 80px;
@@ -80,6 +80,15 @@ main {
 }
 
 #labelPassword, #forgotPassword {
-  font-size: small;
+  font-size: x-small;
+}
+
+@media (min-width: 992px) {
+  #login {
+    width: 420px;
+  }
+  #labelPassword, #forgotPassword {
+    font-size: small;
+  }
 }
 
