@@ -1,10 +1,10 @@
-const header = document.querySelector('header');
+const header = document.querySelector("header");
 
 const navbar = () => {
-  const user = JSON.parse(localStorage.getItem('user')) || undefined;
+  const user = JSON.parse(localStorage.getItem("user")) || undefined;
   console.log(user);
   return (header.innerHTML = `
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top ps-2">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid ">
       <a class="navbar-brand" id="logoDawson" href="#" onclick="window.location.pathname = './index.html'"><img src="../Resources/LogoDawson.png" style="width: 100px;"  alt="LogoDawson">
       </a>
@@ -32,7 +32,8 @@ const navbar = () => {
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0 d-lg-none">
-          ${user 
+          ${
+            user
               ? `
               <li class="nav-item">
                 <b class="mb-3">Bienvenid@ ${user.name}</b>
@@ -51,18 +52,20 @@ const navbar = () => {
                 <a class="btnRegister" href="#">Registrate</a>
               </li>`
           }
-          ${user?.role === 'ADMIN'
-          ? ` <li class="nav-item">
+          ${
+            user?.role === "ADMIN"
+              ? ` <li class="nav-item">
                 <a class="btn btn-success btn-sm mb-2 btnAdmin" href="./views/admin.html">Panel Admin</a>
               </li>
           `
-          : ``
-        }
+              : ``
+          }
         </ul>
       </div>
     </div>
     <ul class="navbar-nav mb-2 mb-lg-0 d-none d-lg-flex w-50 justify-content-lg-center align-items-lg-center" id="navbar-nav">
-          ${user 
+          ${
+            user
               ? `
             <div>
               <li class="nav-item">
@@ -85,16 +88,17 @@ const navbar = () => {
                 <a class="btnRegister" href="#">Registrate</a>
               </li>`
           }
-          ${user?.role === 'ADMIN'
-          ? ` <li class="nav-item">
+          ${
+            user?.role === "ADMIN"
+              ? ` <li class="nav-item">
                 <a class="btn btn-success btn-sm mb-2 btnAdmin" href="./views/admin.html">Panel Admin</a>
               </li>
           `
-          : ``
-        }
+              : ``
+          }
         </ul>
   </nav>
   `);
-}
+};
 
 export default navbar;
