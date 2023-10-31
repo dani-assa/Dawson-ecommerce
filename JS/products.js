@@ -6,6 +6,16 @@ const $tbody = document.getElementById("tbody");
 const $inputId = document.getElementById("idHidden");
 const $productModal = document.getElementById("productModal");
 
+
+//! To do:
+//* 1)
+//! Dependiendo si agrego o edito un producto, cambiar el titulo de ventana
+//! modal para que diga Crear o Editar producto.
+//* 2)
+//! Agregar los iconos a los botones de borrar y editar.
+//* 3)
+//! Implementar SweetAlert2.
+
 const getProducts = async () => {
   try {
     const response = await fetch(`${endpoints.products}`);

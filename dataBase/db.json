@@ -40,7 +40,7 @@
     {
       "id": 2,
       "name": "Sweater cuello cruzado",
-      "price": 3333,
+      "price": 10000,
       "photo": "https://i.ibb.co/rH8J8v5/20190717-125830.jpg",
       "categories": [
         "Sweater",
@@ -69,6 +69,39 @@
         "Zapatos"
       ],
       "available": true
+    },
+    {
+      "name": "Remera Basic",
+      "price": 3100,
+      "photo": "https://deliver.com.ar/wp-content/uploads/2021/09/REMERA-OVERSIZE-22-PORTADA-36-scaled.jpg",
+      "categories": [
+        "Remeras",
+        "Verano"
+      ],
+      "available": true,
+      "id": 5
+    },
+    {
+      "name": "Remera Regular Fit",
+      "price": 3300,
+      "photo": "https://deliver.com.ar/wp-content/uploads/2021/09/REMERA-REGULAR-FIT-22-PORTADA-34-scaled.jpg",
+      "categories": [
+        "Remeras",
+        "Verano"
+      ],
+      "available": true,
+      "id": 6
+    },
+    {
+      "name": "Bermuda Ultra Wide",
+      "price": 4200,
+      "photo": "https://deliver.com.ar/wp-content/uploads/2021/11/BERMUDA-ULTRA-WIDE-CINTURA-SIMPLE-23-PORTADA-13-scaled.jpg",
+      "categories": [
+        "Bermudas",
+        "Verano"
+      ],
+      "available": true,
+      "id": 7
     }
   ]
 }

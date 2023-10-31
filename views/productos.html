@@ -16,10 +16,16 @@
   <body>
     <header></header>
     <main>
-      <h1 class="text-center">Control de Productos</h1>
+      <div class="productPanelInfo w-100">
+        <h1 class="text-center">Control de Productos</h1>
+        <p class="text-center w-75 mx-auto mt-5 fs-5">
+          Bienvenido, este es el panel de control de los productos Dawson. Como
+          administrador, podrás crear, modificar y eliminar productos.
+        </p>
+      </div>
 
       <button
-        class="btn btn-primary mt-5"
+        class="btn btn-primary mt-5 mx-auto d-block"
         data-bs-toggle="modal"
         data-bs-target="#productModal"
       >
@@ -27,7 +33,7 @@
       </button>
       <table
         id="admin"
-        class="table table-bordered table-striped table-responsive mt-2"
+        class="table table-bordered table-striped table-responsive mt-2 w-75 mx-auto"
       >
         <thead>
           <tr>
@@ -40,6 +46,10 @@
         </thead>
         <tbody id="tbody"></tbody>
       </table>
+
+      <div class="productBanner">
+        <img src="../Resources/LogoDawson.png" alt="LogoDawson" />
+      </div>
 
       <!-- Modal -->
       <div
@@ -106,6 +116,7 @@
                     <option value="Remeras">Remeras</option>
                     <option value="Sweater">Sweater</option>
                     <option value="Pantalones">Pantalones</option>
+                    <option value="Bermudas">Bermudas</option>
                     <option value="Zapatillas">Zapatillas</option>
                   </select>
                 </div>
