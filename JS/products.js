@@ -2,18 +2,14 @@ import navbar from "../Components/navbar.js";
 import footer1 from "../Components/footer.js";
 import { endpoints } from "../utils/endpoints.js";
 import { validateProduct } from "../validations/product-validations.js";
+const $productForm = document.getElementById("productForm");
 const $tbody = document.getElementById("tbody");
 const $inputId = document.getElementById("idHidden");
 const $productModal = document.getElementById("productModal");
 
-//! To do:
-//* 1)
-//! Dependiendo si agrego o edito un producto, cambiar el titulo de ventana
-//! modal para que diga Crear o Editar producto.
-//* 2)
-//! Agregar los iconos a los botones de borrar y editar.
-//* 3)
-//! Implementar SweetAlert2.
+//! To do
+//* 1) Solucionar el problema de se recarga la página al enviar el formulario
+//* haciendo que no se muestre el mensaje de confirmación
 
 const getProducts = async () => {
   try {
@@ -42,11 +38,11 @@ const renderProducts = async () => {
           <td>
               <button class="btn btn-danger" id="eliminar" data-productid="${
                 product.id
-              }">Borrar</button>
+              }"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
               <button class="btn btn-success editar" id="${
                 product.id
               }" data-bs-toggle="modal"
-              data-bs-target="#productModal">Editar</button>
+              data-bs-target="#productModal"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
           </td>
       `;
       $tbody.append($tr);
@@ -122,18 +118,57 @@ const updateProduct = async (id, data) => {
 };
 
 const deleteProduct = async (id) => {
-  const confirmDelete = confirm("¿Estás seguro de borrar este producto?");
-
-  if (!confirmDelete) return;
   try {
-    const response = await fetch(`${endpoints.products}/${id}`, {
-      method: "DELETE",
+    const result = await Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción eliminará el producto. ¿Deseas continuar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
     });
-    console.log(response);
+
+    if (result.isConfirmed) {
+      const response = await fetch(`${endpoints.products}/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        await Swal.fire(
+          "Eliminado",
+          "El producto ha sido eliminado.",
+          "success"
+        );
+      } else {
+        await Swal.fire(
+          "Error",
+          "Ha ocurrido un error al eliminar el producto.",
+          "error"
+        );
+      }
+    }
   } catch (error) {
     console.error(error);
   }
 };
+
+/* Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¡No podrás revertir esto!",
+      icon: "warning",
+      background: "#212529",
+      color: "#ffffff",
+      confirmButtonText: "Si",
+      confirmButtonColor: "#d8aa54",
+      cancelButtonText: "No",
+      showDenyButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteProduct(id);
+      }
+    }); */
 
 const showDataFromProduct = async (id) => {
   const data = await getProducts();
@@ -154,7 +189,7 @@ const showDataFromProduct = async (id) => {
   });
 };
 
-document.addEventListener("submit", (e) => {
+$productForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (e.target.idHidden.dataset.id) {
     updateProduct(e.target.idHidden.dataset.id, e.target);
@@ -166,6 +201,7 @@ document.addEventListener("submit", (e) => {
 document.addEventListener("click", async (e) => {
   if (e.target.matches("#eliminar")) {
     const id = e.target.dataset.productid;
+
     deleteProduct(id);
   }
 
@@ -178,6 +214,7 @@ document.addEventListener("click", async (e) => {
       const $selectSeason = document.getElementById("season");
       const $inputDescription = document.getElementById("description");
       const $inputStock = document.getElementById("stock");
+      const $modalTitle = document.querySelector(".modal-title");
 
       const id = e.target.id;
       const products = await getProducts();
@@ -196,6 +233,8 @@ document.addEventListener("click", async (e) => {
 
       $selectCategory.value = selectedCategoryValue;
       $selectSeason.value = selectedSeasonValue;
+
+      $modalTitle.textContent = `Editando ${productFiltered[0].name}`;
 
       $inputId.setAttribute("data-id", productFiltered[0].id);
     } catch (error) {
@@ -236,6 +275,7 @@ $productModal.addEventListener("hidden.bs.modal", () => {
   const $selectSeason = document.getElementById("season");
   const $inputDescription = document.getElementById("description");
   const $inputStock = document.getElementById("stock");
+  const $modalTitle = document.querySelector(".modal-title");
 
   $inputName.value = "";
   $inputPrice.value = "";
@@ -244,6 +284,7 @@ $productModal.addEventListener("hidden.bs.modal", () => {
   $selectSeason.value = "";
   $inputDescription.value = "";
   $inputStock.value = "";
+  $modalTitle.textContent = "Crear nuevo producto";
 
   $inputId.setAttribute("data-id", "");
 });

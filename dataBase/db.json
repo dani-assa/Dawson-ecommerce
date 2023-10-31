@@ -53,17 +53,17 @@
       "stock": 15
     },
     {
-      "name": "Remera Hanlei",
+      "name": "Remera Regular Fit",
       "price": 3500,
-      "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
+      "photo": "https://deliver.com.ar/wp-content/uploads/2021/09/REMERA-REGULAR-FIT-22-PORTADA-34-scaled.jpg",
       "categories": [
         "Remeras",
-        "Invierno"
+        "Verano"
       ],
-      "description": "Hola",
+      "description": "Remera corte basico confeccionada 100% en algodon.La tonalidad del mismo color puede variar de prenda a prenda.",
       "stock": 35,
       "available": true,
-      "id": 5
+      "id": 6
     }
   ]
 }
