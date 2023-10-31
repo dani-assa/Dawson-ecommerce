@@ -6,7 +6,6 @@ const $tbody = document.getElementById("tbody");
 const $inputId = document.getElementById("idHidden");
 const $productModal = document.getElementById("productModal");
 
-
 //! To do:
 //* 1)
 //! Dependiendo si agrego o edito un producto, cambiar el titulo de ventana
@@ -34,13 +33,12 @@ const renderProducts = async () => {
       $tr.innerHTML = `
           <td>${product.name}</td>
           <td>${product.price}</td>
-          <td><button class="btn btn-light lookPhoto" data-bs-toggle="modal" data-bs-target="#photoModal" id="lookPhoto" data-productPhoto="${
-            product.photo
-          }" data-productName="${
-        product.name
-      }"><i class="fa-solid fa-eye" style="color: #d8aa54;"></i></button>
+          <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${
+            product.id
+          }"><i class="fa-solid fa-eye" style="color: #d8aa54;"></i></button>
           </td>
           <td>${product.categories.join(" - ")}</td>
+          <td>${product.stock}</td>
           <td>
               <button class="btn btn-danger" id="eliminar" data-productid="${
                 product.id
@@ -58,16 +56,16 @@ const renderProducts = async () => {
   }
 };
 
-const addPhotoToModal = (url, name) => {
+/* const addPhotoToModal = (url, name) => {
   const $photoModal = document.getElementById("productPhoto");
   const $photoModalTitle = document.getElementById("photoModalTitle");
   $photoModalTitle.innerText = name;
   $photoModal.removeAttribute("src");
   $photoModal.setAttribute("src", url);
 };
-
+ */
 const postProduct = async (data) => {
-  const { name, price, photo, category, season } = data;
+  const { name, price, photo, category, season, description, stock } = data;
 
   const resp = validateProduct(data);
   if (!resp) {
@@ -81,6 +79,8 @@ const postProduct = async (data) => {
         price: parseInt(price.value),
         photo: photo.value,
         categories: [category.value, season.value],
+        description: description.value,
+        stock: parseInt(stock.value),
         available: true,
       }),
       headers: {
@@ -94,7 +94,7 @@ const postProduct = async (data) => {
 };
 
 const updateProduct = async (id, data) => {
-  const { name, price, photo, category, season } = data;
+  const { name, price, photo, category, season, description, stock } = data;
 
   const resp = validateProduct(data);
   if (!resp) {
@@ -108,6 +108,8 @@ const updateProduct = async (id, data) => {
         name: name.value,
         price: parseInt(price.value),
         photo: photo.value,
+        description: description.value,
+        stock: parseInt(stock.value),
         categories: [category.value, season.value],
       }),
       headers: {
@@ -132,6 +134,26 @@ const deleteProduct = async (id) => {
     console.error(error);
   }
 };
+
+const showDataFromProduct = async (id) => {
+  const data = await getProducts();
+
+  const productFiltered = data.filter((product) => product.id == id);
+
+  console.log(productFiltered);
+
+  Swal.fire({
+    title: productFiltered[0].name,
+    text: productFiltered[0].description,
+    background: "#212529",
+    color: "#d8aa54",
+    imageUrl: productFiltered[0].photo,
+    imageHeight: 300,
+    imageAlt: productFiltered[0].name,
+    confirmButtonText: "Ok",
+  });
+};
+
 document.addEventListener("submit", (e) => {
   e.preventDefault();
   if (e.target.idHidden.dataset.id) {
@@ -154,6 +176,8 @@ document.addEventListener("click", async (e) => {
       const $inputPhoto = document.getElementById("photo");
       const $selectCategory = document.getElementById("category");
       const $selectSeason = document.getElementById("season");
+      const $inputDescription = document.getElementById("description");
+      const $inputStock = document.getElementById("stock");
 
       const id = e.target.id;
       const products = await getProducts();
@@ -165,6 +189,8 @@ document.addEventListener("click", async (e) => {
       $inputName.value = productFiltered[0].name;
       $inputPrice.value = productFiltered[0].price;
       $inputPhoto.value = productFiltered[0].photo;
+      $inputDescription.value = productFiltered[0].description;
+      $inputStock.value = productFiltered[0].stock;
       const selectedCategoryValue = productFiltered[0].categories[0];
       const selectedSeasonValue = productFiltered[0].categories[1];
 
@@ -178,22 +204,22 @@ document.addEventListener("click", async (e) => {
   }
 
   if (e.target.matches("#lookPhoto")) {
-    const url = e.target.dataset.productphoto;
-    const name = e.target.dataset.productname;
-    addPhotoToModal(url, name);
+    const id = e.target.dataset.productid;
+
+    showDataFromProduct(id);
   }
 
   // * Solución para el problema que causaba al hacer click en el icono
   // * de fontawesome, lo que causaba que mostrara la imagen anterior al
   // * hacer click en otro elemento...
 
-  if (e.target.matches(".fa-eye")) {
+  /*  if (e.target.matches(".fa-eye")) {
     const $parentTr = e.target.closest("tr");
     const $productPhoto = $parentTr.querySelector(".lookPhoto");
     const url = $productPhoto.getAttribute("data-productPhoto");
     const name = $productPhoto.getAttribute("data-productName");
     addPhotoToModal(url, name);
-  }
+  } */
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -208,12 +234,16 @@ $productModal.addEventListener("hidden.bs.modal", () => {
   const $inputPhoto = document.getElementById("photo");
   const $selectCategory = document.getElementById("category");
   const $selectSeason = document.getElementById("season");
+  const $inputDescription = document.getElementById("description");
+  const $inputStock = document.getElementById("stock");
 
   $inputName.value = "";
   $inputPrice.value = "";
   $inputPhoto.value = "";
   $selectCategory.value = "";
   $selectSeason.value = "";
+  $inputDescription.value = "";
+  $inputStock.value = "";
 
   $inputId.setAttribute("data-id", "");
 });

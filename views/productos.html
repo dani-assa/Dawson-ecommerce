@@ -39,8 +39,9 @@
           <tr>
             <th>Producto</th>
             <th>Precio</th>
-            <th>Imagen</th>
+            <th>Imagen/Descripción</th>
             <th>Categorias</th>
+            <th>Stock</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -101,6 +102,27 @@
                     class="form-control"
                     id="photo"
                     name="photo"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label"
+                    >Descripción</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="stock" class="form-label">Stock</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="stock"
+                    name="stock"
                     required
                   />
                 </div>
@@ -187,5 +209,6 @@
       src="https://kit.fontawesome.com/1cc1d82c1f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

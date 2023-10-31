@@ -4,8 +4,10 @@ export const validateProduct = (data) => {
   const photo = data.photo.value;
   const category = data.category.value;
   const season = data.season.value;
+  const description = data.description.value;
+  const stock = parseInt(data.stock.value);
 
-  if (!name || !photo || !category || !season) {
+  if (!name || !photo || !category || !season || !description || !stock) {
     alert("Todos los campos son obligatorios");
     return false;
   }
@@ -15,6 +17,11 @@ export const validateProduct = (data) => {
     return false;
   } else if (price > 1000000) {
     alert("El precio no puede ser mayor a 1000000");
+    return false;
+  }
+
+  if (isNaN(stock) || stock < 0) {
+    alert("El stock no es válido o es negativo");
     return false;
   }
 
