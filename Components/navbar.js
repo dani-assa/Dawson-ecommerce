@@ -8,10 +8,10 @@ const navbar = () => {
     <div class="container-fluid ">
       <a class="navbar-brand" id="logoDawson" href="#" onclick="window.location.pathname = './index.html'"><img src="../Resources/LogoDawson.png" style="width: 100px;"  alt="LogoDawson">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <img src="../Resources/logoMinuatura.jpg" alt="logoMenu" style="width: 30px;">
       </button>
-      <div class="collapse navbar-collapse justify-content-lg-center" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse justify-content-lg-start" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#" onclick="window.location.pathname = './index.html'">Página principal</a>
@@ -24,10 +24,10 @@ const navbar = () => {
               Categorias
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Remeras</a></li>
+              <li><a class="dropdown-item" href="#">Sweater</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Calzado</a></li>
             </ul>
           </li>
         </ul>
@@ -76,7 +76,8 @@ const navbar = () => {
               <li class="nav-item">
                 <a class="btn btn-success btn-sm mb-2 mx-2 btnCerrarSesion" onclick= "
                   localStorage.clear(),
-                  window.location.reload()"
+                  window.location.reload()
+                  window.location.pathname = './index.html'"
                   href="#">Cerrar sesión</a>
               </li>
             </div>
