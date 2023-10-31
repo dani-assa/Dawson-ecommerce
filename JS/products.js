@@ -3,13 +3,10 @@ import footer1 from "../Components/footer.js";
 import { endpoints } from "../utils/endpoints.js";
 import { validateProduct } from "../validations/product-validations.js";
 const $productForm = document.getElementById("productForm");
+const $table = document.getElementById("admin");
 const $tbody = document.getElementById("tbody");
 const $inputId = document.getElementById("idHidden");
 const $productModal = document.getElementById("productModal");
-
-//! To do
-//* 1) Solucionar el problema de se recarga la página al enviar el formulario
-//* haciendo que no se muestre el mensaje de confirmación
 
 const getProducts = async () => {
   try {
@@ -52,14 +49,6 @@ const renderProducts = async () => {
   }
 };
 
-/* const addPhotoToModal = (url, name) => {
-  const $photoModal = document.getElementById("productPhoto");
-  const $photoModalTitle = document.getElementById("photoModalTitle");
-  $photoModalTitle.innerText = name;
-  $photoModal.removeAttribute("src");
-  $photoModal.setAttribute("src", url);
-};
- */
 const postProduct = async (data) => {
   const { name, price, photo, category, season, description, stock } = data;
 
@@ -83,7 +72,6 @@ const postProduct = async (data) => {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    console.log(response);
   } catch (error) {
     console.error(error);
   }
@@ -119,28 +107,39 @@ const updateProduct = async (id, data) => {
 
 const deleteProduct = async (id) => {
   try {
-    const result = await Swal.fire({
+    const confirmResult = await Swal.fire({
       title: "¿Estás seguro?",
       text: "Esta acción eliminará el producto. ¿Deseas continuar?",
       icon: "warning",
-      showCancelButton: true,
+      background: "#212529",
+      color: "#d8aa54",
       confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
       confirmButtonText: "Sí, eliminar",
+      showCancelButton: true,
+      cancelButtonColor: "#3085d6",
       cancelButtonText: "Cancelar",
     });
 
-    if (result.isConfirmed) {
+    if (confirmResult.isConfirmed) {
       const response = await fetch(`${endpoints.products}/${id}`, {
         method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       });
 
       if (response.ok) {
-        await Swal.fire(
-          "Eliminado",
-          "El producto ha sido eliminado.",
-          "success"
-        );
+        await Swal.fire({
+          title: "Eliminado",
+          text: "El producto ha sido eliminado.",
+          icon: "success",
+          confirmButtonText: "Ok",
+          background: "#212529",
+          color: "#d8aa54",
+          timer: 2000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        });
       } else {
         await Swal.fire(
           "Error",
@@ -154,39 +153,27 @@ const deleteProduct = async (id) => {
   }
 };
 
-/* Swal.fire({
-      title: "¿Estás seguro?",
-      text: "¡No podrás revertir esto!",
-      icon: "warning",
-      background: "#212529",
-      color: "#ffffff",
-      confirmButtonText: "Si",
-      confirmButtonColor: "#d8aa54",
-      cancelButtonText: "No",
-      showDenyButton: true,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        deleteProduct(id);
-      }
-    }); */
-
 const showDataFromProduct = async (id) => {
-  const data = await getProducts();
+  try {
+    const data = await getProducts();
 
-  const productFiltered = data.filter((product) => product.id == id);
+    const productFiltered = data.filter((product) => product.id == id);
 
-  console.log(productFiltered);
+    console.log(productFiltered);
 
-  Swal.fire({
-    title: productFiltered[0].name,
-    text: productFiltered[0].description,
-    background: "#212529",
-    color: "#d8aa54",
-    imageUrl: productFiltered[0].photo,
-    imageHeight: 300,
-    imageAlt: productFiltered[0].name,
-    confirmButtonText: "Ok",
-  });
+    Swal.fire({
+      title: productFiltered[0].name,
+      text: productFiltered[0].description,
+      background: "#212529",
+      color: "#d8aa54",
+      imageUrl: productFiltered[0].photo,
+      imageHeight: 300,
+      imageAlt: productFiltered[0].name,
+      confirmButtonText: "Ok",
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 $productForm.addEventListener("submit", (e) => {
@@ -198,11 +185,14 @@ $productForm.addEventListener("submit", (e) => {
   }
 });
 
-document.addEventListener("click", async (e) => {
+$table.addEventListener("click", async (e) => {
   if (e.target.matches("#eliminar")) {
-    const id = e.target.dataset.productid;
-
-    deleteProduct(id);
+    try {
+      const id = e.target.dataset.productid;
+      deleteProduct(id);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   if (e.target.matches(".editar")) {
@@ -243,9 +233,13 @@ document.addEventListener("click", async (e) => {
   }
 
   if (e.target.matches("#lookPhoto")) {
-    const id = e.target.dataset.productid;
+    try {
+      const id = e.target.dataset.productid;
 
-    showDataFromProduct(id);
+      showDataFromProduct(id);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   // * Solución para el problema que causaba al hacer click en el icono
@@ -259,12 +253,6 @@ document.addEventListener("click", async (e) => {
     const name = $productPhoto.getAttribute("data-productName");
     addPhotoToModal(url, name);
   } */
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  navbar();
-  footer1();
-  renderProducts();
 });
 
 $productModal.addEventListener("hidden.bs.modal", () => {
@@ -287,4 +275,10 @@ $productModal.addEventListener("hidden.bs.modal", () => {
   $modalTitle.textContent = "Crear nuevo producto";
 
   $inputId.setAttribute("data-id", "");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  navbar();
+  footer1();
+  renderProducts();
 });
