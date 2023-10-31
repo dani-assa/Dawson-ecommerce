@@ -6,7 +6,8 @@
       "lastName": "Gomez",
       "password": "Asd12345",
       "id": 1,
-      "role": "CLIENT"
+      "role": "CLIENT",
+      "status": true
     },
     {
       "email": "dani.assa@gmail.com",
@@ -14,7 +15,8 @@
       "lastName": "Assa",
       "password": "Dani12345",
       "id": 2,
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "status": true
     },
     {
       "email": "dc0000@gmail.com",
@@ -22,7 +24,8 @@
       "lastName": "Cabral",
       "password": "1234",
       "id": 3,
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "status": true
     }
   ],
   "products": [
@@ -64,6 +67,19 @@
       "stock": 35,
       "available": true,
       "id": 6
+    },
+    {
+      "name": "Remera Hanley",
+      "price": 23,
+      "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
+      "categories": [
+        "Gorras",
+        "Invierno"
+      ],
+      "description": "adas",
+      "stock": 34,
+      "available": true,
+      "id": 7
     }
   ]
 }
