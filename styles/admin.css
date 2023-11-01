@@ -1,0 +1,27 @@
+.hero-banner {
+  padding: 56px;
+  background-color: #d8aa54;
+  text-align: center;
+}
+
+.admin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.products {
+  width: 50%;
+  height: 600px;
+  background-color: #5c5a57;
+  border: 1px solid #d8aa54;
+  text-align: center;
+}
+
+.users {
+  width: 50%;
+  height: 600px;
+  background-color: #5c5a57;
+  border: 1px solid #d8aa54;
+  text-align: center;
+}

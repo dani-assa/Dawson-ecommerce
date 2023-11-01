@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dawson</title>
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/admin.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,17 +16,27 @@
   <body>
     <header></header>
     <main>
-      <h1>Panel de administrador</h1>
+      <div class="hero-banner">
+        <h1>Panel de Administrador</h1>
+      </div>
 
-      <button>
-        <a href="../views/productos.html"
-          ><img
-            src="../Resources/admin-productos.jpg"
-            alt=""
-            style="width: 270px; height: 250px"
-        /></a>
-      </button>
-      <button><a href="#">Administrar Usuarios</a></button>
+      <section class="admin">
+        <article class="products">
+          <h2>Productos</h2>
+
+          <button>
+            <a href="../views/productos.html">Administrar Productos</a>
+          </button>
+        </article>
+        <article class="users">
+          <h2>Usuarios</h2>
+          <div class="card">
+            <button>
+              <a href="../views/users.html">Administrar Usuarios</a>
+            </button>
+          </div>
+        </article>
+      </section>
     </main>
 
     <footer></footer>

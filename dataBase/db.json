@@ -67,19 +67,6 @@
       "stock": 35,
       "available": true,
       "id": 6
-    },
-    {
-      "name": "Remera Hanley",
-      "price": 23,
-      "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
-      "categories": [
-        "Gorras",
-        "Invierno"
-      ],
-      "description": "adas",
-      "stock": 34,
-      "available": true,
-      "id": 7
     }
   ]
 }

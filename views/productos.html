@@ -18,9 +18,9 @@
     <main>
       <div class="productPanelInfo w-100">
         <h1 class="text-center">Control de Productos</h1>
-        <p class="text-center w-75 mx-auto mt-5 fs-5">
+        <p class="text-center w-100 w-sm-75 mx-auto mt-4 mt-md-5 fs-5">
           Bienvenido, este es el panel de control de los productos Dawson. Como
-          administrador, podrás crear, modificar y eliminar productos.
+          administrador, podrás crear, modificar y eliminar productos.
         </p>
       </div>
 
@@ -31,25 +31,31 @@
       >
         <p class="m-0 p-0 fs-5 fw-bold">Nuevo producto</p>
       </button>
-      <table
-        id="admin"
-        class="table table-bordered table-striped table-responsive mt-2 w-75 mx-auto"
-      >
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Imagen/Descripción</th>
-            <th>Categorias</th>
-            <th>Stock</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
+      <div class="table-responsive">
+        <table
+          id="admin"
+          class="table table-bordered table-striped mt-2 w-100 mx-auto"
+        >
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Imagen/Descripción</th>
+              <th>Categorias</th>
+              <th>Stock</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
 
-      <div class="productBanner">
-        <img src="../Resources/LogoDawson.png" alt="LogoDawson" />
+      <div class="productBanner text-center">
+        <img
+          src="../Resources/LogoDawson.png"
+          alt="LogoDawson"
+          class="img-fluid"
+        />
       </div>
 
       <!-- Modal -->
