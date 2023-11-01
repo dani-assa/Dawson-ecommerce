@@ -17,25 +17,46 @@
     <header></header>
     <main>
       <div class="hero-banner">
-        <h1>Panel de Administrador</h1>
+        <h1 class="text-center text-dark fs-1 fw-bold">
+          Panel de Administrador
+        </h1>
       </div>
 
       <section class="admin">
-        <article class="products">
-          <h2>Productos</h2>
-
-          <button>
-            <a href="../views/productos.html">Administrar Productos</a>
-          </button>
-        </article>
-        <article class="users">
-          <h2>Usuarios</h2>
-          <div class="card">
-            <button>
-              <a href="../views/users.html">Administrar Usuarios</a>
-            </button>
+        <div class="row justify-content-center mt-5 g-0 cards-container">
+          <div class="col-sm-12 col-md-4">
+            <div class="card border-light border-2">
+              <div class="card-header text-center text-white bg-dark p-3 fs-5">
+                Administración de Usuarios
+              </div>
+              <div class="card-img-top">
+                <a href="../views/users.html"
+                  ><img
+                    src="../Resources/users_card_admin.jpg"
+                    alt="Imagen de Usuarios"
+                    class="card-img-top"
+                    style="height: 500px"
+                /></a>
+              </div>
+            </div>
           </div>
-        </article>
+          <div class="col-sm-12 col-md-4">
+            <div class="card border-light border-2">
+              <div class="card-header text-center text-white bg-dark p-3 fs-5">
+                Administración de Productos
+              </div>
+              <div class="card-img-top">
+                <a href="../views/productos.html"
+                  ><img
+                    src="../Resources/clothes_card_admin.jpg"
+                    alt="Imagen de Productos"
+                    class="card-img-top"
+                    style="height: 500px"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

@@ -55,7 +55,7 @@ const navbar = () => {
           ${
             user?.role === "ADMIN"
               ? ` <li class="nav-item">
-                <a class="btn btn-success btn-sm mb-2 btnAdmin" href="./views/admin.html">Panel Admin</a>
+                <a class="btn btn-success btn-sm mb-2 btnAdmin" onclick="window.location.pathname = './views/admin.html'">Panel Admin</a>
               </li>
           `
               : ``
@@ -91,7 +91,7 @@ const navbar = () => {
           ${
             user?.role === "ADMIN"
               ? ` <li class="nav-item">
-                <a class="btn btn-success btn-sm mb-2 btnAdmin" href="./views/admin.html">Panel Admin</a>
+                <a class="btn btn-success btn-sm mb-2 btnAdmin" onclick="window.location.pathname = './views/admin.html'">Panel Admin</a>
               </li>
           `
               : ``

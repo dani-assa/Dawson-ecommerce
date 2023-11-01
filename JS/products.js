@@ -28,7 +28,7 @@ const renderProducts = async () => {
           <td>${product.price}</td>
           <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${
             product.id
-          }"><i class="fa-solid fa-eye" style="color: #d8aa54;"></i></button>
+          }"><i class="fa-solid fa-eye fa-xs" style="color: #d8aa54;"></i></button>
           </td>
           <td>${product.categories.join(" - ")}</td>
           <td>${product.stock}</td>
