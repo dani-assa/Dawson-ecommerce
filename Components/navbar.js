@@ -2,7 +2,6 @@ const header = document.querySelector("header");
 
 const navbar = () => {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
-  console.log(user);
   return (header.innerHTML = `
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid ">
