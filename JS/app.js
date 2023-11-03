@@ -20,11 +20,12 @@ const getProducts = async () => {
 
 const cardsProducts = document.getElementById('cardsProducts');
 const btnCategory = document.querySelectorAll('.btnCategory')
+const products = await getProducts();
 
-const printProducts = async () => {
+const printProducts = async (filterProducts) => {
   try {
-    const products = await getProducts();
-    products.forEach((product) => {
+    cardsProducts.innerHTML = '';
+    filterProducts.forEach((product) => {
       const card = document.createElement('div');
       card.classList = 'card m-3 col-9 col-lg-2 g-0';
       card.innerHTML = `
@@ -41,11 +42,23 @@ const printProducts = async () => {
     console.error(error);
   }
 };
+printProducts(products);
+
 
 btnCategory.forEach(btn => {
   btn.addEventListener('click', (e) => {
+    btnCategory.forEach(btn => btn.classList.remove('active'))
     e.currentTarget.classList.add('active');
+    console.log(e);
+    if (e.target.id != 'Todos') {
+      const productFiltered = products.filter((product) => product.categories === e.target.id)
+      printProducts(productFiltered);
+      console.log(productFiltered);
+    } else {
+      printProducts(products);
+      
+    }
   })
 })
 
-document.addEventListener('DOMContentLoaded', printProducts);
+// document.addEventListener('DOMContentLoaded', printProducts);
