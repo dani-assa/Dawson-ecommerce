@@ -34,10 +34,7 @@
       "name": "Remera Hanley",
       "price": 5000,
       "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
-      "categories": [
-        "Remeras",
-        "Verano"
-      ],
+      "categories":"Remeras",
       "available": true,
       "description": "Explora el máximo confort y estilo con nuestra remera de algodón premium. ",
       "stock": 25
@@ -47,10 +44,7 @@
       "name": "Sweater cuello cruzado",
       "price": 19500,
       "photo": "https://i.ibb.co/rH8J8v5/20190717-125830.jpg",
-      "categories": [
-        "Sweater",
-        "Invierno"
-      ],
+      "categories": "Sweater",
       "available": true,
       "description": "Sumérgete en el lujo cálido y sofisticado de nuestro sweater tejido, una obra maestra de la artesanía textil que combina estilo y comodidad en perfecta armonía.",
       "stock": 15
@@ -59,10 +53,7 @@
       "name": "Remera Regular Fit",
       "price": 3500,
       "photo": "https://i.ibb.co/jGHmR7M/IMG-20200110-195852.jpg",
-      "categories": [
-        "Remeras",
-        "Verano"
-      ],
+      "categories": "Remeras",
       "description": "Remera corte basico confeccionada 100% en algodon.La tonalidad del mismo color puede variar de prenda a prenda.",
       "stock": 35,
       "available": true,
@@ -72,10 +63,7 @@
       "name": "Zapatillas negras de cuero",
       "price": 35000,
       "photo": "https://i.ibb.co/Tw6x6HG/1597851168435.jpg",
-      "categories": [
-        "Calzado",
-        "Invierno"
-      ],
+      "categories": "Calzado",
       "description": "Zapatillas negras de cuero, calidad premium",
       "stock": 15,
       "available": true,
