@@ -2,6 +2,10 @@ import navbar from "../Components/navbar.js";
 import footer1 from "../Components/footer.js";
 import { endpoints } from "../utils/endpoints.js";
 
+const cardsProducts = document.getElementById('cardsProducts');
+const btnCategory = document.querySelectorAll('.btnCategory')
+const title = document.querySelector('#title');
+
 
 document.addEventListener('DOMContentLoaded', () => 
 navbar (),
@@ -17,10 +21,8 @@ const getProducts = async () => {
     console.error(error);    
   }
 };
-
-const cardsProducts = document.getElementById('cardsProducts');
-const btnCategory = document.querySelectorAll('.btnCategory')
 const products = await getProducts();
+
 
 const printProducts = async (filterProducts) => {
   try {
@@ -51,10 +53,14 @@ btnCategory.forEach(btn => {
     e.currentTarget.classList.add('active');
     console.log(e);
     if (e.target.id != 'Todos') {
+      const productCategories = products.find(product => product.categories === e.target.id);
+      title.innerText = productCategories.categories;
+
       const productFiltered = products.filter((product) => product.categories === e.target.id)
       printProducts(productFiltered);
       console.log(productFiltered);
     } else {
+      title.innerText = 'Todos los productos';
       printProducts(products);
       
     }
