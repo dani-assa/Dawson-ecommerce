@@ -6,6 +6,7 @@ const cardsProducts = document.getElementById('cardsProducts');
 const btnCategory = document.querySelectorAll('.btnCategory')
 const title = document.querySelector('#title');
 let btnAgregar = document.querySelectorAll('.btnAgregar');
+const numeritoCarrito = document.querySelector('.numeritoCarrito'); 
 
 document.addEventListener('DOMContentLoaded', () => 
 navbar (),
@@ -87,5 +88,16 @@ function agregarAlCarrito(e) {
     productAgregado.cantidad = 1;
     productEnCarrito.push(productAgregado);
   };
-  console.log(productEnCarrito);
-}
+
+  actualiarNumeritoCarrito();
+
+  localStorage.setItem('productosEnCarrito', JSON.stringify(productEnCarrito));
+};
+// -- Funcion para modificar el nro del carrito 
+
+function actualiarNumeritoCarrito() {
+  let nuevoNumerito = productEnCarrito.reduce((acc, product) => acc + product.cantidad, 0);
+  numeritoCarrito.innerText = nuevoNumerito;
+};
+
+
