@@ -2,6 +2,11 @@ import navbar from "../Components/navbar.js";
 import footer1 from "../Components/footer.js";
 import { endpoints } from "../utils/endpoints.js";
 
+const cardsProducts = document.getElementById('cardsProducts');
+const btnCategory = document.querySelectorAll('.btnCategory')
+const title = document.querySelector('#title');
+let btnAgregar = document.querySelectorAll('.btnAgregar');
+const numeritoCarrito = document.querySelector('.numeritoCarrito'); 
 
 document.addEventListener('DOMContentLoaded', () => 
 navbar (),
@@ -17,10 +22,8 @@ const getProducts = async () => {
     console.error(error);    
   }
 };
-
-const cardsProducts = document.getElementById('cardsProducts');
-const btnCategory = document.querySelectorAll('.btnCategory')
 const products = await getProducts();
+
 
 const printProducts = async (filterProducts) => {
   try {
@@ -33,10 +36,11 @@ const printProducts = async (filterProducts) => {
         <div class="card-body d-flex flex-column justify-content-between">
           <h6 class="card-title">${product.name}</h6>
           <h6 class="card-title">$${product.price}</h6>
-          <a href="#" class="btn btn-primary btn-sm" id="${product.id}">Agregar al carrito</a>
+          <a href="#" class="btn btn-primary btn-sm btnAgregar" id="${product.id}">Agregar al carrito</a>
         </div>
       `
       cardsProducts.append(card);
+      actualizaBtnAgregar();
     })
   } catch (error) {
     console.error(error);
@@ -51,14 +55,49 @@ btnCategory.forEach(btn => {
     e.currentTarget.classList.add('active');
     console.log(e);
     if (e.target.id != 'Todos') {
+      const productCategories = products.find(product => product.categories === e.target.id);
+      title.innerText = productCategories.categories;
+
       const productFiltered = products.filter((product) => product.categories === e.target.id)
       printProducts(productFiltered);
       console.log(productFiltered);
     } else {
+      title.innerText = 'Todos los productos';
       printProducts(products);
-      
     }
   })
-})
+});
 
-// document.addEventListener('DOMContentLoaded', printProducts);
+function actualizaBtnAgregar() {
+  btnAgregar = document.querySelectorAll('.btnAgregar');
+
+  btnAgregar.forEach(btn =>{
+    btn.addEventListener('click', agregarAlCarrito);
+  })
+};
+
+const productEnCarrito = [];
+
+function agregarAlCarrito(e) {
+  const idBtn = e.target.id;
+  const productAgregado = products.find(product => product.id == idBtn);
+  if(productEnCarrito.some(product => product.id == idBtn)) {
+    const index = productEnCarrito.findIndex(product => product.id == idBtn);
+    productEnCarrito[index].cantidad++;
+  } else {
+    productAgregado.cantidad = 1;
+    productEnCarrito.push(productAgregado);
+  };
+
+  actualiarNumeritoCarrito();
+
+  localStorage.setItem('productosEnCarrito', JSON.stringify(productEnCarrito));
+};
+// -- Funcion para modificar el nro del carrito 
+
+function actualiarNumeritoCarrito() {
+  let nuevoNumerito = productEnCarrito.reduce((acc, product) => acc + product.cantidad, 0);
+  numeritoCarrito.innerText = nuevoNumerito;
+};
+
+
