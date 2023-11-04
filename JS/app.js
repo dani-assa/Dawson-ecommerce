@@ -78,7 +78,14 @@ function actualizaBtnAgregar() {
   });
 }
 
-const productEnCarrito = [];
+let productEnCarrito;
+let productEnCarritoLS = localStorage.getItem('productosEnCarrito');
+if (productEnCarritoLS) {
+  productEnCarrito = JSON.parse(productEnCarritoLS);
+  actualiarNumeritoCarrito();
+} else {
+  productEnCarrito = []; 
+}
 
 function agregarAlCarrito(e) {
   const idBtn = e.target.id;
