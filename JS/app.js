@@ -31,7 +31,9 @@ const printProducts = async (filterProducts) => {
       const card = document.createElement("div");
       card.classList = "card m-3 col-4 col-lg-2 g-0 cardProduct";
       card.innerHTML = `
+        <a href="views/detailPage.html?id=${product.id}">
         <img src="${product.photo}" class="card-img-top" alt="foto prductos">
+        </a>
         <div class="card-body d-flex flex-column justify-content-between">
           <h6 class="card-title">${product.name}</h6>
           <h6 class="card-title">$${product.price}</h6>
@@ -79,12 +81,12 @@ function actualizaBtnAgregar() {
 }
 
 let productEnCarrito;
-let productEnCarritoLS = localStorage.getItem('productosEnCarrito');
+let productEnCarritoLS = localStorage.getItem("productosEnCarrito");
 if (productEnCarritoLS) {
   productEnCarrito = JSON.parse(productEnCarritoLS);
   actualiarNumeritoCarrito();
 } else {
-  productEnCarrito = []; 
+  productEnCarrito = [];
 }
 
 function agregarAlCarrito(e) {
