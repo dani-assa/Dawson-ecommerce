@@ -83,7 +83,20 @@ main {
   font-size: x-small;
 }
 
+.btnCategorie {
+  background-color: var(--colorPrimary) !important;
+  border: 1px solid var(--colorPrimary) !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
 
+.btnCategorie:hover {
+  background-color: #c58c22 !important;
+}
+
+.cardProduct {
+  box-shadow: 1px 0px 14px 2px #333333;
+}
 
 @media (min-width: 992px) {
   #login {

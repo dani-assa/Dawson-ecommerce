@@ -3,7 +3,7 @@ import footer1 from "../Components/footer.js";
 import { endpoints } from "../utils/endpoints.js";
 
 const cardsProducts = document.getElementById("cardsProducts");
-const btnCategory = document.querySelectorAll(".btnCategory");
+const btnCategorie = document.querySelectorAll(".btnCategorie");
 const title = document.querySelector("#title");
 let btnAgregar = document.querySelectorAll(".btnAgregar");
 const numeritoCarrito = document.querySelector(".numeritoCarrito");
@@ -29,7 +29,7 @@ const printProducts = async (filterProducts) => {
         return;
       }
       const card = document.createElement("div");
-      card.classList = "card m-3 col-9 col-lg-2 g-0";
+      card.classList = "card m-3 col-4 col-lg-2 g-0 cardProduct";
       card.innerHTML = `
         <img src="${product.photo}" class="card-img-top" alt="foto prductos">
         <div class="card-body d-flex flex-column justify-content-between">
@@ -47,9 +47,9 @@ const printProducts = async (filterProducts) => {
 };
 printProducts(products);
 
-btnCategory.forEach((btn) => {
+btnCategorie.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    btnCategory.forEach((btn) => btn.classList.remove("active"));
+    btnCategorie.forEach((btn) => btn.classList.remove("active"));
     e.currentTarget.classList.add("active");
     console.log(e);
     if (e.target.id != "Todos") {
