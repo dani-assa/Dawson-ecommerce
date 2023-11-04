@@ -42,7 +42,7 @@ const renderUsers = async () => {
 };
 
 const changeStatus = async (id) => {
-  const getUser = await (await fetch(`${endpoints.users}/${id}`)).json();
+  const getUser = await fetch(`${endpoints.users}/${id}`).json();
 
   if (getUser.status == true) {
     await fetch(`${endpoints.users}/${id}`, {

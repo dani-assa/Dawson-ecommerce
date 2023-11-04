@@ -26,14 +26,28 @@ const renderProducts = async () => {
       $tr.innerHTML = `
           <td>${product.name}</td>
           <td>${product.price}</td>
-          <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${product.id}"><i class="fa-solid fa-eye fa-xs" style="color: #d8aa54;"></i></button>
+          <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${
+            product.id
+          }"><i class="fa-solid fa-eye fa-xs" style="color: #d8aa54;"></i></button>
           </td>
           <td>${product.categories}</td>
           <td>${product.stock}</td>
           <td>
-              <button class="btn btn-danger" id="eliminar" data-productid="${product.id}"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
-              <button class="btn btn-success editar" id="${product.id}" data-bs-toggle="modal"
+              <button class="btn btn-danger" id="eliminar" data-productid="${
+                product.id
+              }"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+              <button class="btn btn-success editar" id="${
+                product.id
+              }" data-bs-toggle="modal"
               data-bs-target="#productModal"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+              
+                <input class="form-check-input" type="checkbox" data-productid="${
+                  product.id
+                }"
+                availability="switch" id="checkProductAvailability" ${
+                  product.available === true ? "checked" : ""
+                }>
+            
           </td>
       `;
       $tbody.append($tr);
@@ -170,6 +184,33 @@ const showDataFromProduct = async (id) => {
   }
 };
 
+const changeAvailability = async (id) => {
+  const getProduct = await fetch(`${endpoints.products}/${id}`);
+  const response = await getProduct.json();
+
+  if (response.available == true) {
+    await fetch(`${endpoints.products}/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        available: false,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+  } else {
+    await fetch(`${endpoints.products}/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        available: true,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+  }
+};
+
 $productForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (e.target.idHidden.dataset.id) {
@@ -231,6 +272,12 @@ $table.addEventListener("click", async (e) => {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  if (e.target.matches("#checkProductAvailability")) {
+    const id = e.target.dataset.productid;
+
+    await changeAvailability(id);
   }
 });
 
