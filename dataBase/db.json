@@ -34,7 +34,7 @@
       "name": "Remera Hanley",
       "price": 5000,
       "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
-      "categories":"Remeras",
+      "categories": "Remeras",
       "available": true,
       "description": "Explora el máximo confort y estilo con nuestra remera de algodón premium. ",
       "stock": 25
@@ -68,6 +68,16 @@
       "stock": 15,
       "available": true,
       "id": 7
+    },
+    {
+      "name": "Remera Basic",
+      "price": 3100,
+      "photo": "https://deliver.com.ar/wp-content/uploads/2021/09/REMERA-OVERSIZE-22-PORTADA-36-scaled.jpg",
+      "categories": "Remeras",
+      "description": "La prenda esta confeccionada en un 100% de algodón. El calce del producto es Oversize, para más comodidad y un look canchero sin género.La tonalidad del mismo color puede variar de prenda a prenda.",
+      "stock": 50,
+      "available": true,
+      "id": 8
     }
   ]
 }

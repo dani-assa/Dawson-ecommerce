@@ -3,11 +3,10 @@ export const validateProduct = (data) => {
   const price = parseInt(data.price.value);
   const photo = data.photo.value;
   const category = data.category.value;
-  const season = data.season.value;
   const description = data.description.value;
   const stock = parseInt(data.stock.value);
 
-  if (!name || !photo || !category || !season || !description || !stock) {
+  if (!name || !photo || !category || !description || !stock) {
     alert("Todos los campos son obligatorios");
     return false;
   }

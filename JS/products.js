@@ -26,19 +26,13 @@ const renderProducts = async () => {
       $tr.innerHTML = `
           <td>${product.name}</td>
           <td>${product.price}</td>
-          <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${
-            product.id
-          }"><i class="fa-solid fa-eye fa-xs" style="color: #d8aa54;"></i></button>
+          <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${product.id}"><i class="fa-solid fa-eye fa-xs" style="color: #d8aa54;"></i></button>
           </td>
-          <td>${product.categories.join(" - ")}</td>
+          <td>${product.categories}</td>
           <td>${product.stock}</td>
           <td>
-              <button class="btn btn-danger" id="eliminar" data-productid="${
-                product.id
-              }"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
-              <button class="btn btn-success editar" id="${
-                product.id
-              }" data-bs-toggle="modal"
+              <button class="btn btn-danger" id="eliminar" data-productid="${product.id}"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+              <button class="btn btn-success editar" id="${product.id}" data-bs-toggle="modal"
               data-bs-target="#productModal"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
           </td>
       `;
@@ -63,7 +57,7 @@ const postProduct = async (data) => {
         name: name.value,
         price: parseInt(price.value),
         photo: photo.value,
-        categories: [category.value, season.value],
+        categories: category.value,
         description: description.value,
         stock: parseInt(stock.value),
         available: true,
@@ -94,7 +88,7 @@ const updateProduct = async (id, data) => {
         photo: photo.value,
         description: description.value,
         stock: parseInt(stock.value),
-        categories: [category.value, season.value],
+        categories: category.value,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -201,7 +195,6 @@ $table.addEventListener("click", async (e) => {
       const $inputPrice = document.getElementById("price");
       const $inputPhoto = document.getElementById("photo");
       const $selectCategory = document.getElementById("category");
-      const $selectSeason = document.getElementById("season");
       const $inputDescription = document.getElementById("description");
       const $inputStock = document.getElementById("stock");
       const $modalTitle = document.querySelector(".modal-title");
@@ -218,11 +211,9 @@ $table.addEventListener("click", async (e) => {
       $inputPhoto.value = productFiltered[0].photo;
       $inputDescription.value = productFiltered[0].description;
       $inputStock.value = productFiltered[0].stock;
-      const selectedCategoryValue = productFiltered[0].categories[0];
-      const selectedSeasonValue = productFiltered[0].categories[1];
+      const selectedCategoryValue = productFiltered[0].categories;
 
       $selectCategory.value = selectedCategoryValue;
-      $selectSeason.value = selectedSeasonValue;
 
       $modalTitle.textContent = `Editando ${productFiltered[0].name}`;
 
@@ -241,18 +232,6 @@ $table.addEventListener("click", async (e) => {
       console.error(error);
     }
   }
-
-  // * Solución para el problema que causaba al hacer click en el icono
-  // * de fontawesome, lo que causaba que mostrara la imagen anterior al
-  // * hacer click en otro elemento...
-
-  /*  if (e.target.matches(".fa-eye")) {
-    const $parentTr = e.target.closest("tr");
-    const $productPhoto = $parentTr.querySelector(".lookPhoto");
-    const url = $productPhoto.getAttribute("data-productPhoto");
-    const name = $productPhoto.getAttribute("data-productName");
-    addPhotoToModal(url, name);
-  } */
 });
 
 $productModal.addEventListener("hidden.bs.modal", () => {
@@ -260,7 +239,6 @@ $productModal.addEventListener("hidden.bs.modal", () => {
   const $inputPrice = document.getElementById("price");
   const $inputPhoto = document.getElementById("photo");
   const $selectCategory = document.getElementById("category");
-  const $selectSeason = document.getElementById("season");
   const $inputDescription = document.getElementById("description");
   const $inputStock = document.getElementById("stock");
   const $modalTitle = document.querySelector(".modal-title");
@@ -269,7 +247,6 @@ $productModal.addEventListener("hidden.bs.modal", () => {
   $inputPrice.value = "";
   $inputPhoto.value = "";
   $selectCategory.value = "";
-  $selectSeason.value = "";
   $inputDescription.value = "";
   $inputStock.value = "";
   $modalTitle.textContent = "Crear nuevo producto";
