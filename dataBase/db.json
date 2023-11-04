@@ -56,7 +56,7 @@
       "categories": "Remeras",
       "description": "Remera corte basico confeccionada 100% en algodon.La tonalidad del mismo color puede variar de prenda a prenda.",
       "stock": 35,
-      "available": false,
+      "available": true,
       "id": 6
     },
     {
@@ -66,7 +66,7 @@
       "categories": "Calzado",
       "description": "Zapatillas negras de cuero, calidad premium",
       "stock": 15,
-      "available": false,
+      "available": true,
       "id": 7
     },
     {
@@ -76,8 +76,18 @@
       "categories": "Remeras",
       "description": "La prenda esta confeccionada en un 100% de algodón. El calce del producto es Oversize, para más comodidad y un look canchero sin género.La tonalidad del mismo color puede variar de prenda a prenda.",
       "stock": 50,
-      "available": false,
+      "available": true,
       "id": 8
+    },
+    {
+      "name": "Zapato de cuero suela",
+      "price": 20000,
+      "photo": "https://i.ibb.co/wNtM4Zj/20190721-120609.jpg",
+      "categories": "Calzado",
+      "description": "Descubre el equilibrio perfecto entre elegancia y funcionalidad con nuestros zapatos de cuero, diseñados para hacer una declaración de estilo sin sacrificar la comodidad. Confeccionados con cuero genuino que garantiza durabilidad y un tacto suave, estos zapatos destacan por su suela de caucho resistente, ofreciéndote tracción confiable y resistencia al desgaste en cada paso que das. La plantilla acolchada proporciona soporte adicional, permitiéndote llevarlos durante todo el día sin fatiga.",
+      "stock": 14,
+      "available": true,
+      "id": 9
     }
   ]
 }

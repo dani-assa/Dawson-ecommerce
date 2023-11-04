@@ -12,17 +12,33 @@
 <body>
   <header></header>
   <main>
-    <div class="d-flex justify-content-end me-5">
-      <a href="./views/carrito.html" id="Carrito" class="btn btn-success"><i class="bi bi-cart-fill"></i> <span class="numeritoCarrito">0</span> </a>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="./Resources/banner 1.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./Resources/banner 3.webp" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <!-- <h1>Pagina principal</h1> -->
+    <div class="d-flex justify-content-end me-5">
+      <a href="./views/carrito.html" id="Carrito" class="btn btn-danger m-3"><i class="bi bi-cart-fill"></i> <span class="numeritoCarrito">0</span> </a>
+    </div>
     <div class="d-flex flex-column flex-lg-row align-items-center container ">
       <div id="filtersProducts" class="d-flex flex-lg-column justify-content-evenly">
-        <button id="Todos" class="btn btn-success btnCategory">Todos</button>
-        <button id="Remeras" class="btn btn-success btnCategory">Remeras</button>
-        <button id="Sweater" class="btn btn-success btnCategory">Sweater</button>
-        <button id="Calzado" class="btn btn-success btnCategory">Calzado</button>
-        
+        <button id="Todos" class="btn btn-success me-3 mt-lg-3 active btnCategorie">Todos</button>
+        <button id="Remeras" class="btn btn-success me-3 mt-lg-3 btnCategorie">Remeras</button>
+        <button id="Sweater" class="btn btn-success me-3 mt-lg-3 btnCategorie">Sweater</button>
+        <button id="Calzado" class="btn btn-success me-3 mt-lg-3 btnCategorie">Calzado</button>
       </div>
       <!-- Aqui se cargan cards desde JS -->
       <div>
@@ -30,7 +46,6 @@
         <section id="cardsProducts" class="d-flex row w-100 justify-content-center">
         </section>
       </div>
-
     </div>
 
   </main>
