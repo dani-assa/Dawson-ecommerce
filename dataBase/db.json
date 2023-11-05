@@ -70,16 +70,6 @@
       "id": 7
     },
     {
-      "name": "Remera Basic",
-      "price": 3100,
-      "photo": "https://deliver.com.ar/wp-content/uploads/2021/09/REMERA-OVERSIZE-22-PORTADA-36-scaled.jpg",
-      "categories": "Remeras",
-      "description": "La prenda esta confeccionada en un 100% de algodón. El calce del producto es Oversize, para más comodidad y un look canchero sin género.La tonalidad del mismo color puede variar de prenda a prenda.",
-      "stock": 50,
-      "available": true,
-      "id": 8
-    },
-    {
       "name": "Zapato de cuero suela",
       "price": 20000,
       "photo": "https://i.ibb.co/wNtM4Zj/20190721-120609.jpg",
