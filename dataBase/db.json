@@ -26,6 +26,24 @@
       "id": 3,
       "role": "ADMIN",
       "status": true
+    },
+    {
+      "name": "Rocio",
+      "lastName": "Romero",
+      "email": "roromero@gmail.com",
+      "password": "12345",
+      "role": "CLIENT",
+      "status": true,
+      "id": 11
+    },
+    {
+      "name": "fede",
+      "lastName": "assa",
+      "email": "fede@gmail.com",
+      "password": "asd123",
+      "role": "CLIENT",
+      "status": true,
+      "id": 12
     }
   ],
   "products": [

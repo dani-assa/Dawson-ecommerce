@@ -18,17 +18,6 @@ const navbar = () => {
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre nosotros</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Remeras</a></li>
-              <li><a class="dropdown-item" href="#">Sweater</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Calzado</a></li>
-            </ul>
-          </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0 d-lg-none">
           ${
@@ -48,7 +37,7 @@ const navbar = () => {
               : `
               <li class="nav-item">
                 <a class="btn btn-success mx-2 btn-sm btnLogin" onclick="window.location.pathname = './views/login.html'">Ingresar</a>
-                <a class="btnRegister" href="#">Registrate</a>
+                <a class="btnRegister" href="../views/register.html">Registrate</a>
               </li>`
           }
           ${
@@ -84,7 +73,7 @@ const navbar = () => {
               : `
               <li class="nav-item">
                 <a class="btn btn-success mx-2 btn-sm btnLogin" onclick="window.location.pathname = './views/login.html'" >Ingresar</a>
-                <a class="btnRegister" href="#">Registrate</a>
+                <a class="btnRegister" href="../views/register.html">Registrate</a>
               </li>`
           }
           ${
