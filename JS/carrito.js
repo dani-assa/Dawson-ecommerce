@@ -26,21 +26,21 @@ function cargarProductosCarritos() {
       cardCarrito.classList = 'card d-flex flex-row justify-content-between';
       cardCarrito.innerHTML = `
           <img src="${product.photo}" alt="${product.name}" style="width: 100px;">
-          <div class="carritoProductoTitulo">
+          <div class="carritoProductoTitulo col-2">
             <small>Título</small>
-            <h4>${product.name}</h4>
+            <h6>${product.name}</h6>
           </div>
-          <div class="carritoProductoCantidad">
+          <div class="carritoProductoCantidad col-2">
             <small>Cantidad</small>
-            <h4>${product.cantidad}</h4>
+            <h6>${product.cantidad}</h6>
           </div>
-          <div class="carritoProductoPrecio">
+          <div class="carritoProductoPrecio col-2">
             <small>Precio</small>
-            <h4>${product.price}</h4>
+            <h6>$${product.price}</h6>
           </div>
-          <div class="carritoProductoSubtotal">
+          <div class="carritoProductoSubtotal col-2">
             <small>Subtotal</small>
-            <h4>${product.cantidad * product.price} </h4>
+            <h6>$${product.cantidad * product.price} </h6>
           </div>
           <a class="btnEliminarProd" id="${product.id}"><i class="bi bi-trash-fill"></i></a>
       `;

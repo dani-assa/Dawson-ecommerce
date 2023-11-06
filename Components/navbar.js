@@ -13,7 +13,7 @@ const navbar = () => {
       <div class="collapse navbar-collapse justify-content-lg-start" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" onclick="window.location.pathname = './index.html'">Página principal</a>
+            <a class="nav-link " aria-current="page" href="#" onclick="window.location.pathname = './index.html'">Página principal</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre nosotros</a>
