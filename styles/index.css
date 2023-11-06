@@ -110,6 +110,11 @@ main {
   width: 175px;
 }
 
+.btnEliminarProd {
+  color: #d32929;
+  
+}
+
 
 @media (min-width: 992px) {
   #login {
