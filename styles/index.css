@@ -152,6 +152,13 @@ main {
   border: 1px solid var(--colorThird);
 }
 
+#logoTw, #logoInsta, #logoMeta {
+  transition: all .3s;
+}
+
+#logoTw:hover, #logoInsta:hover, #logoMeta:hover {
+  width: 30px;
+}
 
 
 @media (min-width: 992px) {

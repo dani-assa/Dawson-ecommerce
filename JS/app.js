@@ -90,6 +90,7 @@ if (productEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
+  e.preventDefault();
   const idBtn = e.target.id;
   const productAgregado = products.find((product) => product.id == idBtn);
   if (productEnCarrito.some((product) => product.id == idBtn)) {

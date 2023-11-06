@@ -53,7 +53,7 @@
       "price": 5000,
       "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
       "categories": "Remeras",
-      "available": true,
+      "available": false,
       "description": "Explora el máximo confort y estilo con nuestra remera de algodón premium. ",
       "stock": 25
     },

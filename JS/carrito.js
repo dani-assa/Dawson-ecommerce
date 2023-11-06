@@ -72,7 +72,7 @@ function actualizaBtnEliminar() {
 async function eliminarDelCarrito(e) {
   const confirmResult = await Swal.fire({
     title: "¿Estás seguro?",
-    text: "Esta acción eliminará el producto. ¿Deseas continuar?",
+    text: "Esta acción eliminará el producto del carrito. ¿Deseas continuar?",
     icon: "warning",
     background: "#212529",
     color: "#d8aa54",
@@ -87,6 +87,8 @@ async function eliminarDelCarrito(e) {
     const index = productEnCarrito.findIndex(product => product.id == idBtn);
   
     productEnCarrito.splice(index, 1);
+    console.log(index);
+    console.log(productEnCarrito);
     cargarProductosCarritos();
     actualizarTotal();
     localStorage.setItem('productosEnCarrito', JSON.stringify(productEnCarrito));
@@ -94,7 +96,7 @@ async function eliminarDelCarrito(e) {
     if (!idBtn.ok) {
       await Swal.fire({
         title: "Eliminado",
-        text: "El producto ha sido eliminado.",
+        text: "El producto ha sido eliminado del carrito.",
         icon: "success",
         confirmButtonText: "Ok",
         background: "#212529",
