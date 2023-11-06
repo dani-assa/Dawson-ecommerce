@@ -18,8 +18,6 @@ const getProducts = async () => {
   }
 };
 
-const cardDetailProducts = document.getElementById("containerDetail");
-
 const getURLParams = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
@@ -53,7 +51,7 @@ const printCardDetail = async (id) => {
     const $img = document.createElement("img");
     $img.src = productFiltered[0].photo;
     $img.classList = "card-img-top img-fluid";
-    $img.style.height = "500px";
+    $img.style.height = "100vh";
     $img.alt = "Foto del producto";
 
     const $h1TituloProducto = document.createElement("h1");
@@ -81,19 +79,22 @@ const printCardDetail = async (id) => {
     $h2OtrosDetalles.classList.add(
       "card-title",
       "fw-bold",
-      "mt-5",
+      "mt-4",
       "text-center"
     );
 
     const $pOtrosDetalles = document.createElement("p");
     $pOtrosDetalles.innerHTML = `Precio: $${productFiltered[0].price} <br>
     Categoría: ${productFiltered[0].categories} <br>
-    Stock: ${productFiltered[0].stock}`;
+    Stock: ${productFiltered[0].stock} <br>
+    ID: ${productFiltered[0].id} <br>
+    <button class="btn btn-primary btn-sm btnAgregar" id="${productFiltered[0].id}">Agregar al carrito</button>
+    `;
     $pOtrosDetalles.classList.add(
       "card-text",
       "text-center",
       "mt-2",
-      "fs-2",
+      "fs-3",
       "text-dark",
       "w-75",
       "mx-auto"

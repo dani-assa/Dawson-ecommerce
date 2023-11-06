@@ -44,6 +44,15 @@
       "role": "CLIENT",
       "status": true,
       "id": 12
+    },
+    {
+      "name": "Pepe",
+      "lastName": "pepin",
+      "email": "dc0000@gmail.com",
+      "password": "123",
+      "role": "CLIENT",
+      "status": true,
+      "id": 13
     }
   ],
   "products": [
