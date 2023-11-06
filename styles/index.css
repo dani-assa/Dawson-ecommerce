@@ -1,7 +1,7 @@
 :root {
   --colorPrimary: #D8AA54;
   --colorSecond: #2ec4b6;
-  --colorThird: #cbf3f0;
+  --colorThird: #8bebe4;
 }
 
 main {
@@ -100,8 +100,8 @@ main {
 }
 
 .active, .btnCategorie:hover {
-  background-color: rgb(196, 139, 33)important;
-  box-shadow: 0px 0px 7px 5px rgba(196, 139, 33, 0.45);
+  background-color: rgb(231, 201, 146) !important;
+  box-shadow: 0px 0px 7px 5px rgba(231, 201, 146, 0.45);
 }
 
 .cardProduct {
@@ -116,8 +116,40 @@ main {
 
 .btnEliminarProd {
   color: #d32929;
-  cursor: pointer;
-  
+  cursor: pointer; 
+}
+
+.btnAgregar {
+  background-color: var(--colorPrimary) !important;
+  border: 1px solid var(--colorPrimary) !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.btnAgregar:hover {
+  background-color: rgb(196, 139, 33) !important;
+}
+
+#vaciarCarrito, #btnSeguirComprando {
+  background-color: var(--colorPrimary);
+  border: 1px solid var(--colorPrimary);
+  color:#000000;
+  font-weight: 600;
+}
+
+#vaciarCarrito:hover, #btnSeguirComprando:hover {
+  background-color: rgb(231, 201, 146);
+}
+
+#btnFinalizarCompra {
+  background-color: var(--colorSecond);
+  border: 1px solid var(--colorSecond);
+  font-weight: 600;
+}
+
+#btnFinalizarCompra:hover {
+  background-color: var(--colorThird);
+  border: 1px solid var(--colorThird);
 }
 
 

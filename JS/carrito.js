@@ -43,7 +43,7 @@ function cargarProductosCarritos() {
             <small>Subtotal</small>
             <h6>$${product.cantidad * product.price} </h6>
           </div>
-          <a class="btnEliminarProd mb-auto mt-auto" id="${product.id}"><i class="bi bi-trash-fill"></i></a>
+          <a class="btnEliminarProd mb-auto mt-auto me-2" id="${product.id}"><i class="bi bi-trash-fill"></i></a>
       `;
   
       contenedorCarritoProductos.appendChild(cardCarrito);
@@ -69,15 +69,49 @@ function actualizaBtnEliminar() {
   })
 };
 
-function eliminarDelCarrito(e) {
-  const idBtn = e.currentTarget.id;
-  const index = productEnCarrito.findIndex(product => product.id == idBtn);
+async function eliminarDelCarrito(e) {
+  const confirmResult = await Swal.fire({
+    title: "¿Estás seguro?",
+    text: "Esta acción eliminará el producto. ¿Deseas continuar?",
+    icon: "warning",
+    background: "#212529",
+    color: "#d8aa54",
+    confirmButtonColor: "#d33",
+    confirmButtonText: "Sí, eliminar",
+    showCancelButton: true,
+    cancelButtonColor: "#3085d6",
+    cancelButtonText: "Cancelar",
+  });
+  if (confirmResult.isConfirmed) {
+    const idBtn = await e.target.id;
+    const index = productEnCarrito.findIndex(product => product.id == idBtn);
+  
+    productEnCarrito.splice(index, 1);
+    cargarProductosCarritos();
+    actualizarTotal();
+    localStorage.setItem('productosEnCarrito', JSON.stringify(productEnCarrito));
 
-  productEnCarrito.splice(index, 1);
-  cargarProductosCarritos();
-  actualizarTotal();
+    if (!idBtn.ok) {
+      await Swal.fire({
+        title: "Eliminado",
+        text: "El producto ha sido eliminado.",
+        icon: "success",
+        confirmButtonText: "Ok",
+        background: "#212529",
+        color: "#d8aa54",
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+      });
+    } else {
+      await Swal.fire(
+        "Error",
+        "Ha ocurrido un error al eliminar el producto.",
+        "error"
+      );
+    }
+  };
 
-  localStorage.setItem('productosEnCarrito', JSON.stringify(productEnCarrito));
 };
 
 btnVaciarCarrito.addEventListener('click', vaciarCarrito);
