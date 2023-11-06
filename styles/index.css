@@ -129,5 +129,14 @@ main {
   #labelPassword, #forgotPassword {
     font-size: small;
   }
+  .carritoProductos {
+    width: 50%;
+  }
+  #contenedorSeguirComprando{
+    margin: 20px 350px !important;
+  }
+  #carritoAcciones {
+    margin: 20px 350px !important;
+  }
 }
 
