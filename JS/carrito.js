@@ -13,6 +13,7 @@ const contenedorCarritoAcciones = document.querySelector('.carritoAcciones');
 let btnEliminarProd = document.querySelector('.btnEliminarProd');
 const btnVaciarCarrito = document.querySelector('#vaciarCarrito');
 const total = document.querySelector('#total');
+const contenedorTotal = document.querySelector('.carritoTotal');
 
 
 function cargarProductosCarritos() {
@@ -23,7 +24,7 @@ function cargarProductosCarritos() {
   
     productEnCarrito.forEach(product => {
       const cardCarrito = document.createElement('div');
-      cardCarrito.classList = 'card d-flex flex-row justify-content-between';
+      cardCarrito.classList = 'card d-flex flex-row justify-content-between align-items-center border border-4 mt-2 rounded';
       cardCarrito.innerHTML = `
           <img src="${product.photo}" alt="${product.name}" style="width: 100px;">
           <div class="carritoProductoTitulo col-2">
@@ -42,7 +43,7 @@ function cargarProductosCarritos() {
             <small>Subtotal</small>
             <h6>$${product.cantidad * product.price} </h6>
           </div>
-          <a class="btnEliminarProd" id="${product.id}"><i class="bi bi-trash-fill"></i></a>
+          <a class="btnEliminarProd mb-auto mt-auto" id="${product.id}"><i class="bi bi-trash-fill"></i></a>
       `;
   
       contenedorCarritoProductos.appendChild(cardCarrito);
@@ -51,6 +52,7 @@ function cargarProductosCarritos() {
     carritoVacio.classList.remove('d-none');
     contenedorCarritoProductos.classList.add('d-none');
     contenedorCarritoAcciones.classList.add('d-none');
+    contenedorTotal.classList.add('d-none');
 
   };
   actualizaBtnEliminar();
