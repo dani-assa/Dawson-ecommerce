@@ -5,8 +5,17 @@ const $content = document.getElementById("content");
 const $imgDetail = document.getElementById("imgDetail");
 const $containerDetail = document.getElementById("containerDetail");
 
-// document.addEventListener('DOMContentLoaded', () => navbar ());
-// document.addEventListener('DOMContentLoaded', () => footer1 ());
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  },
+});
 
 const getProducts = async () => {
   try {
@@ -36,21 +45,10 @@ const printCardDetail = async (id) => {
       window.location.href = "../views/error404.html";
     }
 
-    /* const detailProduct = document.createElement("div");
-    detailProduct.classList = "card";
-    detailProduct.innerHTML = `<div class="card" style="width: 18rem;">
-    <img src="${productFiltered[0].photo}" class="card-img-top" alt="Foto del producto">
-    <div class="card-body d-flex flex-column justify-content-between">
-      <h5 class="card-title">${productFiltered[0].name}</h5>
-      <h6 class="card-title">$${productFiltered[0].price}</h6>
-      <a href="#" class="btn btn-primary btn-sm">Agregar al carrito</a>
-    </div>
-  </div>
-  ` */
-
     const $img = document.createElement("img");
     $img.src = productFiltered[0].photo;
-    $img.classList = "card-img-top img-fluid";
+    $img.classList = "card-img-top";
+    $img.style.minHeight = "600px";
     $img.style.height = "100vh";
     $img.alt = "Foto del producto";
 
@@ -88,7 +86,7 @@ const printCardDetail = async (id) => {
     Categoría: ${productFiltered[0].categories} <br>
     Stock: ${productFiltered[0].stock} <br>
     ID: ${productFiltered[0].id} <br>
-    <button class="btn btn-primary btn-sm btnAgregar" id="${productFiltered[0].id}">Agregar al carrito</button>
+    <button class="btn btn-primary border-2 border-dark btnAddToCart" id="${productFiltered[0].id}">Agregar al carrito</button>
     `;
     $pOtrosDetalles.classList.add(
       "card-text",
@@ -119,4 +117,46 @@ document.addEventListener("DOMContentLoaded", () => {
   navbar();
   footer1();
   getURLParams();
+  numeritoCarrito();
+});
+
+const $numeritoCarrito = document.getElementById("numeritoCarrito");
+
+let carrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+
+const numeritoCarrito = () => {
+  let nuevoNumerito = carrito.reduce(
+    (acc, product) => acc + product.cantidad,
+    0
+  );
+  $numeritoCarrito.innerText = nuevoNumerito;
+};
+
+console.log($numeritoCarrito);
+document.addEventListener("click", async (e) => {
+  if (e.target.matches(".btnAddToCart")) {
+    const id = e.target.id;
+    const products = await getProducts();
+
+    const productAgregado = products.find((product) => product.id == id);
+    console.log(productAgregado.id);
+
+    if (carrito.some((product) => product.id == productAgregado.id)) {
+      const index = carrito.findIndex(
+        (product) => product.id == productAgregado.id
+      );
+      carrito[index].cantidad++;
+    } else {
+      productAgregado.cantidad = 1;
+      carrito = [...carrito, productAgregado];
+    }
+
+    localStorage.setItem("productosEnCarrito", JSON.stringify(carrito));
+    numeritoCarrito();
+
+    Toast.fire({
+      icon: "success",
+      title: "Producto agregado al carrito",
+    });
+  }
 });
