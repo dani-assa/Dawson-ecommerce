@@ -42,7 +42,7 @@
       "email": "fede@gmail.com",
       "password": "asd123",
       "role": "CLIENT",
-      "status": true,
+      "status": false,
       "id": 12
     },
     {
@@ -51,7 +51,7 @@
       "email": "dc0000@gmail.com",
       "password": "123",
       "role": "CLIENT",
-      "status": true,
+      "status": false,
       "id": 13
     }
   ],
