@@ -11,31 +11,35 @@
 </head>
 <body>
   <header></header>
-  <main>
+  <main class="mainCarrito">
     <h2 class="text-center">Carrito de compras</h2>
-    <div id="contenedorCarrito" class="d-flex justify-content-center">
-      <div class="carritoVacio">
-        <p>Tu carrito esta vacio <i class="bi bi-emoji-frown"></i></p>
+    <div>
+      <div id="contenedorCarrito" class="d-flex justify-content-center">
+        <div class="carritoVacio alert alert-warning p-5">
+          <p class="">Tu carrito esta vacio <i class="bi bi-emoji-frown"></i></p>
+        </div>
+        <div class="carritoProductos">
+          <!-- Aqui se cargan los productos desde JS -->
+        </div>
       </div>
-      <div class="carritoProductos">
-        <!-- Aqui se cargan los productos desde JS -->
+      <div class="d-flex mt-3 justify-content-between ms-3 me-3" id="contenedorSeguirComprando">
+        <a href="../index.html" class="btn btn-success btn-sm text-center" id="btnSeguirComprando">Seguir comprando <i class="bi bi-arrow-left"></i></a>
+        <div class="d-flex carritoTotal fs-5 fw-semibold">
+          <p>Total: $</p>
+          <p id="total"></p>
+        </div>
       </div>
-    </div>
-    <div class="d-flex mt-3 justify-content-between ms-3 me-3">
-      <a href="../index.html" class="btn btn-success btn-sm">Seguir comprando <i class="bi bi-arrow-90deg-left"></i></a>
-    <div class="d-flex">
-      <p>Total: $</p>
-      <p id="total"></p>
-    </div>
-    </div>
-    <div class="carritoAcciones d-flex flex-column justify-content-end align-items-end me-3">
-      <button id="vaciarCarrito" class="btn btn-success btn-sm mb-3">Vaciar carrito</button>
-      <a href="./error404.html" class="btn btn-warning btn-sm">Finalizar compra</a>
+      <div class="carritoAcciones d-flex flex-column justify-content-end align-items-end me-3" id="carritoAcciones">
+        <button id="vaciarCarrito" class="btn btn-success btn-sm mb-3">Vaciar carrito</button>
+        <a href="./error404.html" class="btn btn-warning btn-sm" id="btnFinalizarCompra">Finalizar compra</a>
+      </div>
+
     </div>
   </main>
 
   <footer></footer>
   <script type="module" src="../JS/carrito.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
