@@ -1,4 +1,5 @@
 .containerDetail {
   background-color: #d8aa54;
-  height: 500px;
+  height: 100vh;
+  min-height: 600px;
 }
