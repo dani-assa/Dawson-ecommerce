@@ -62,7 +62,7 @@
       "price": 5000,
       "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
       "categories": "Remeras",
-      "available": true,
+      "available": false,
       "description": "Explora el máximo confort y estilo con nuestra remera de algodón premium. ",
       "stock": 25
     },
@@ -101,7 +101,7 @@
       "price": 20000,
       "photo": "https://i.ibb.co/wNtM4Zj/20190721-120609.jpg",
       "categories": "Calzado",
-      "description": "Descubre el equilibrio perfecto entre elegancia y funcionalidad con nuestros zapatos de cuero, diseñados para hacer una declaración de estilo sin sacrificar la comodidad. Confeccionados con cuero genuino que garantiza durabilidad y un tacto suave, estos zapatos destacan por su suela de caucho resistente, ofreciéndote tracción confiable y resistencia al desgaste en cada paso que das. La plantilla acolchada proporciona soporte adicional, permitiéndote llevarlos durante todo el día sin fatiga.",
+      "description": "Descubre el equilibrio perfecto entre elegancia y funcionalidad con nuestros zapatos de cuero, diseñados para hacer una declaración de estilo sin sacrificar la comodidad. ",
       "stock": 14,
       "available": true,
       "id": 9
