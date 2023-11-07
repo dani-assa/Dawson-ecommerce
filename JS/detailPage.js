@@ -47,18 +47,19 @@ const printCardDetail = async (id) => {
 
     const $img = document.createElement("img");
     $img.src = productFiltered[0].photo;
-    $img.classList = "card-img-top";
+    $img.classList = "card-img-top rounded-start";
     /* $img.style.maxHeight = "900px"; */
     /*     $img.style.height = "100vh";
      */ $img.alt = "Foto del producto";
 
-    const $h1TituloProducto = document.createElement("h2");
+    const $h1TituloProducto = document.createElement("h3");
     $h1TituloProducto.textContent = productFiltered[0].name;
     $h1TituloProducto.classList.add(
       "card-title",
       "fw-bold",
       "mt-1",
-      "text-center"
+      "text-center",
+      "text-dark"
     );
     const $pDescripcion = document.createElement("p");
     $pDescripcion.textContent = `${productFiltered[0].description}`;
@@ -72,28 +73,34 @@ const printCardDetail = async (id) => {
       "mx-auto"
     );
 
-    const $h2OtrosDetalles = document.createElement("h3");
+    const $h2OtrosDetalles = document.createElement("h4");
     $h2OtrosDetalles.textContent = "Otros detalles";
     $h2OtrosDetalles.classList.add(
       "card-title",
       "fw-bold",
       "mt-4",
-      "ms-5"
+      "ms-5",
+      "text-dark",
       // "text-center"
     );
 
-    const $pOtrosDetalles = document.createElement("p");
-    $pOtrosDetalles.innerHTML = `Precio: $${productFiltered[0].price} <br>
-    Categoría: ${productFiltered[0].categories} <br>
-    Stock: ${productFiltered[0].stock} <br>
-    ID: ${productFiltered[0].id} 
-    <button class="btn btn-primary border-2 border-dark btnAddToCart" id="${productFiltered[0].id}">Agregar al carrito</button>
+    const $pOtrosDetalles = document.createElement("div");
+    $pOtrosDetalles.id = 'divOtrosDetalles'
+    $pOtrosDetalles.innerHTML = `
+    <div>
+      <p class="m-1"><b> Precio:</b> $${productFiltered[0].price} </p>
+      <p class="m-1"><b>Categoría:</b> ${productFiltered[0].categories} </p>
+      <p class="m-1"><b>Stock:</b> ${productFiltered[0].stock} </p>
+      <p class="m-1"><b>ID:</b> ${productFiltered[0].id} </p> 
+    </div>
+    <div id="divBtnAddToCart">
+      <button class="btn btn-primary border-2 mx-auto btnAddToCart" id="${productFiltered[0].id}">Agregar al carrito</button>
+    </div>
     `;
     $pOtrosDetalles.classList.add(
       "card-text",
-      // "text-center",
-      "mt-2",
-      "fs-5",
+      "mt-3",
+      // "fs-5",
       "text-dark",
       "w-75",
       "mx-auto"
