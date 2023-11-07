@@ -7,7 +7,7 @@
       "password": "Asd12345",
       "id": 1,
       "role": "CLIENT",
-      "status": false
+      "status": true
     },
     {
       "email": "dani.assa@gmail.com",
@@ -83,7 +83,7 @@
       "categories": "Remeras",
       "description": "Remera corte basico confeccionada 100% en algodon.La tonalidad del mismo color puede variar de prenda a prenda.",
       "stock": 35,
-      "available": true,
+      "available": false,
       "id": 6
     },
     {
