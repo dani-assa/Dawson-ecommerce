@@ -10,6 +10,18 @@ const numeritoCarrito = document.querySelector(".numeritoCarrito");
 
 document.addEventListener("DOMContentLoaded", () => navbar(), footer1());
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  },
+});
+
 const getProducts = async () => {
   try {
     const response = await fetch(`${endpoints.products}`);
@@ -104,6 +116,11 @@ function agregarAlCarrito(e) {
   actualiarNumeritoCarrito();
 
   localStorage.setItem("productosEnCarrito", JSON.stringify(productEnCarrito));
+  
+  Toast.fire({
+    icon: "success",
+    title: "Producto agregado al carrito",
+  });
 }
 // -- Funcion para modificar el nro del carrito
 

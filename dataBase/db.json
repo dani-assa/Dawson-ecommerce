@@ -62,7 +62,7 @@
       "price": 5000,
       "photo": "https://i.ibb.co/LSDcCBV/20190918-145808.jpg",
       "categories": "Remeras",
-      "available": false,
+      "available": true,
       "description": "Explora el máximo confort y estilo con nuestra remera de algodón premium. ",
       "stock": 25
     },
@@ -105,6 +105,16 @@
       "stock": 14,
       "available": true,
       "id": 9
+    },
+    {
+      "name": "Remera Hanley",
+      "price": 6000,
+      "photo": "https://i.ibb.co/n0KTGKS/IMG-20191202-113312.jpg",
+      "categories": "Remeras",
+      "description": "Remera de algodon premium",
+      "stock": 18,
+      "available": true,
+      "id": 10
     }
   ]
 }
