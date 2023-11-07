@@ -1,12 +1,12 @@
 :root {
-  --colorPrimary: #D8AA54;
+  --colorPrimary: #d8aa54;
   --colorSecond: #2ec4b6;
   --colorThird: #8bebe4;
 }
 
 main {
   margin-top: 60px;
-
+  margin-bottom: 100px;
 }
 
 .mainIndex {
@@ -70,25 +70,27 @@ main {
 #login {
   width: 350px;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 30px 40px;
 }
 
 #bodyLogin {
-  background: url('../Resources/fondoLogin2.webp') no-repeat;
+  background: url("../Resources/fondoLogin2.webp") no-repeat;
   background-size: cover;
   background-position: center;
   margin-top: 80px;
 }
 
-#email, #password{
+#email,
+#password {
   background: transparent;
 }
 
-#labelPassword, #forgotPassword {
+#labelPassword,
+#forgotPassword {
   font-size: x-small;
 }
 
@@ -99,14 +101,15 @@ main {
   font-weight: 600 !important;
 }
 
-.active, .btnCategorie:hover {
+.active,
+.btnCategorie:hover {
   background-color: rgb(231, 201, 146) !important;
   box-shadow: 0px 0px 7px 5px rgba(231, 201, 146, 0.45);
 }
 
 .cardProduct {
   box-shadow: 1px 0px 14px 2px #333333;
-  transition: all 0.5s ;
+  transition: all 0.5s;
 }
 
 .cardProduct:hover {
@@ -116,7 +119,7 @@ main {
 
 .btnEliminarProd {
   color: #d32929;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .btnAgregar {
@@ -130,14 +133,16 @@ main {
   background-color: rgb(196, 139, 33) !important;
 }
 
-#vaciarCarrito, #btnSeguirComprando {
+#vaciarCarrito,
+#btnSeguirComprando {
   background-color: var(--colorPrimary);
   border: 1px solid var(--colorPrimary);
-  color:#000000;
+  color: #000000;
   font-weight: 600;
 }
 
-#vaciarCarrito:hover, #btnSeguirComprando:hover {
+#vaciarCarrito:hover,
+#btnSeguirComprando:hover {
   background-color: rgb(231, 201, 146);
 }
 
@@ -152,30 +157,33 @@ main {
   border: 1px solid var(--colorThird);
 }
 
-#logoTw, #logoInsta, #logoMeta {
-  transition: all .3s;
+#logoTw,
+#logoInsta,
+#logoMeta {
+  transition: all 0.3s;
 }
 
-#logoTw:hover, #logoInsta:hover, #logoMeta:hover {
+#logoTw:hover,
+#logoInsta:hover,
+#logoMeta:hover {
   width: 30px;
 }
-
 
 @media (min-width: 992px) {
   #login {
     width: 420px;
   }
-  #labelPassword, #forgotPassword {
+  #labelPassword,
+  #forgotPassword {
     font-size: small;
   }
   .carritoProductos {
     width: 50%;
   }
-  #contenedorSeguirComprando{
+  #contenedorSeguirComprando {
     margin: 20px 350px !important;
   }
   #carritoAcciones {
     margin: 20px 350px !important;
   }
 }
-

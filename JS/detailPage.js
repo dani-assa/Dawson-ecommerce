@@ -48,9 +48,9 @@ const printCardDetail = async (id) => {
     const $img = document.createElement("img");
     $img.src = productFiltered[0].photo;
     $img.classList = "card-img-top";
-    $img.style.minHeight = "600px";
-    $img.style.height = "100vh";
-    $img.alt = "Foto del producto";
+    /* $img.style.maxHeight = "900px"; */
+    /*     $img.style.height = "100vh";
+     */ $img.alt = "Foto del producto";
 
     const $h1TituloProducto = document.createElement("h1");
     $h1TituloProducto.textContent = productFiltered[0].name;
@@ -66,13 +66,13 @@ const printCardDetail = async (id) => {
       "card-text",
       "text-center",
       "mt-2",
-      "fs-3",
+      "fs-5",
       "text-dark",
       "w-75",
       "mx-auto"
     );
 
-    const $h2OtrosDetalles = document.createElement("h2");
+    const $h2OtrosDetalles = document.createElement("h3");
     $h2OtrosDetalles.textContent = "Otros detalles";
     $h2OtrosDetalles.classList.add(
       "card-title",
@@ -92,7 +92,7 @@ const printCardDetail = async (id) => {
       "card-text",
       "text-center",
       "mt-2",
-      "fs-3",
+      "fs-5",
       "text-dark",
       "w-75",
       "mx-auto"

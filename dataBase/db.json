@@ -7,7 +7,7 @@
       "password": "Asd12345",
       "id": 1,
       "role": "CLIENT",
-      "status": true
+      "status": false
     },
     {
       "email": "dani.assa@gmail.com",
@@ -42,7 +42,7 @@
       "email": "fede@gmail.com",
       "password": "asd123",
       "role": "CLIENT",
-      "status": false,
+      "status": true,
       "id": 12
     },
     {

@@ -1,12 +1,12 @@
 .containerDetail {
   background-color: #d8aa54;
-  height: 100vh;
-  min-height: 600px;
+
+  min-height: 300px;
 }
 
 .divCarrito {
   position: fixed;
-  bottom: 20px;
+  bottom: 140px;
   right: -40px;
   z-index: 100;
 }
