@@ -52,7 +52,7 @@ const printCardDetail = async (id) => {
     /*     $img.style.height = "100vh";
      */ $img.alt = "Foto del producto";
 
-    const $h1TituloProducto = document.createElement("h1");
+    const $h1TituloProducto = document.createElement("h2");
     $h1TituloProducto.textContent = productFiltered[0].name;
     $h1TituloProducto.classList.add(
       "card-title",
@@ -78,19 +78,20 @@ const printCardDetail = async (id) => {
       "card-title",
       "fw-bold",
       "mt-4",
-      "text-center"
+      "ms-5"
+      // "text-center"
     );
 
     const $pOtrosDetalles = document.createElement("p");
     $pOtrosDetalles.innerHTML = `Precio: $${productFiltered[0].price} <br>
     Categoría: ${productFiltered[0].categories} <br>
     Stock: ${productFiltered[0].stock} <br>
-    ID: ${productFiltered[0].id} <br>
+    ID: ${productFiltered[0].id} 
     <button class="btn btn-primary border-2 border-dark btnAddToCart" id="${productFiltered[0].id}">Agregar al carrito</button>
     `;
     $pOtrosDetalles.classList.add(
       "card-text",
-      "text-center",
+      // "text-center",
       "mt-2",
       "fs-5",
       "text-dark",

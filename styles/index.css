@@ -169,6 +169,30 @@ main {
   width: 30px;
 }
 
+/* .divCarrito {
+  position: fixed;
+  bottom: 70px;
+  right: -40px;
+  z-index: 100;
+} */
+
+.btnCarrito {
+  position: relative;
+}
+
+.numeritoCarrito {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
 @media (min-width: 992px) {
   #login {
     width: 420px;
