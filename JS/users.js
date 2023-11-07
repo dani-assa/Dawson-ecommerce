@@ -26,12 +26,13 @@ const renderUsers = async () => {
             <td>${user.role}</td>
             <td>${user.status === true ? "Activo" : "Inactivo"}</td>
             <td>
-                <input class="form-check-input" type="checkbox" data-userid="${
-                  user.id
-                }"
-                role="switch" id="checkUserStatus" ${
-                  user.status === true ? "checked" : ""
-                }>
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkUserStatus"
+                    data-userid="${user.id}"
+                    ${user.status === true ? "checked" : ""}
+                />
             </td>
         `;
       $tbody.append($tr);
