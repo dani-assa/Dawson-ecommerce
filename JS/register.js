@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () =>
 navbar (),
 footer1());
 
-
-const form = document.getElementById('formulario-register');
-
-
-
 const getUsers = async () => {
   try {
     const response = await fetch(`${endpoints.users}`);
@@ -27,9 +22,9 @@ const formulario = async (e) => {
 
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
-  const email = document.getElementById('email').value;
-  const contraseña = document.getElementById('contraseña').value;
-  const repetirContraseña = document.getElementById('repetirContraseña').value;
+  const email = document.getElementById('correo').value;
+  const contraseña = document.getElementById('password').value;
+  const repetirContraseña = document.getElementById('password2').value;
 
   const user = {
     nombre,
@@ -57,12 +52,14 @@ const formulario = async (e) => {
   } catch (error) {
     console.error(error);
   };
-  
+  validarFormulario();
+  validarPassword2();
+  mjeEnviado();
 };
 
 // VALIDANDO LOS DATOS DEL REGISTRO 
 const $formulario = document.getElementById("formulario");
-const $inputs = document.querySelectorAll("#formulario input")
+const $inputs = document.querySelectorAll("#formulario input");
 
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,8}$/, 
@@ -100,7 +97,7 @@ const validarFormulario = (e) => {
             validarPassword2();
         break;
     }
-}
+};
 
 
 // -------------- VALIDAR INPUTS ------------------------
@@ -122,7 +119,7 @@ const validarCampo = (expresion, input, campo) => {
       campos[campo] = false;
       console.log("Funciona");
         }
-}
+};
 
 
 // --------- LAS CONTRASEÑAS ---------------
@@ -151,36 +148,36 @@ const validarPassword2 = () => {
 
 
 // --------- DATOS INGRESADOS POR EL USUARIO Y VALIDAR ---------------
-$inputs.forEach((input) => {
-    input.addEventListener("keyup", validarFormulario);
-    input.addEventListener("blur", validarFormulario);
-});
+// $inputs.forEach((input) => {
+//     input.addEventListener("keyup", validarFormulario);
+//     input.addEventListener("blur", validarFormulario);
+// });
 
-$formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
 
-    const $terminos = document.getElementById("terminos");
-    if(campos.nombre && campos.apellido && campos.correo && campos.password && $terminos.checked) {
-        // formulario.reset();
+function mjeEnviado() {
+  const $terminos = document.getElementById("terminos");
+  if(campos.nombre && campos.apellido && campos.correo && campos.password && $terminos.checked) {
+      // formulario.reset();
 
-        document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
-        setTimeout(() => {
-            document.getElementById("formulario__mensaje-exito").classList.remove("formulario__mensaje-exito-activo");
-            document.getElementById("formulario__grupo-terminos").style.display = "none";
-            
-        }, 3000);
-        
-        document.querySelectorAll(".formulario__grupo--correcto").forEach ((icono) => {
-            icono.classList.remove("formulario__grupo--correcto");
-        });
-        
-        setTimeout(() => {
-            location.reload();
-        }, 5000);
+      document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
+      setTimeout(() => {
+          document.getElementById("formulario__mensaje-exito").classList.remove("formulario__mensaje-exito-activo");
+          document.getElementById("formulario__grupo-terminos").style.display = "none";
+          
+      }, 3000);
+      
+      document.querySelectorAll(".formulario__grupo--correcto").forEach ((icono) => {
+          icono.classList.remove("formulario__grupo--correcto");
+      });
+      
+      setTimeout(() => {
+          location.reload();
+      }, 5000);
 
-    } else {
-        document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
-    }
-});
+  } else {
+      document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
+  };
+};
 
 $formulario.addEventListener('submit', formulario);
+

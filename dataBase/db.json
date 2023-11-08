@@ -53,6 +53,15 @@
       "role": "CLIENT",
       "status": false,
       "id": 13
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "role": "CLIENT",
+      "status": true,
+      "id": 14
     }
   ],
   "products": [

@@ -24,46 +24,45 @@
     <!-- FORMULARIO DE REGISTRO -->
 
     <form class="formulario" id="formulario">
-
       <!--GRUPO DE USUARIO - -->
       <div class="formulario__grupo" id="grupo__nombre">
-        <label class="formulario__label">Nombre</label>
+        <label for="nombre" class="formulario__label">Nombre</label>
         <div class="formulario__grupo-input">
-          <input type="text" class="formulario__input" name="nombre" id="nombre">
+          <input type="text" class="formulario__input" name="nombre" id="nombre" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">El Nombre debe tener máximo de 8 caracteres y solo se admiten mayúsculas y
           minúsculas.</p>
       </div>
       <div class="formulario__grupo" id="grupo__apellido">
-        <label class="formulario__label">Apellido</label>
+        <label for="apellido" class="formulario__label">Apellido</label>
         <div class="formulario__grupo-input">
-          <input type="text" class="formulario__input" name="apellido" id="apellido">
+          <input type="text" class="formulario__input" name="apellido" id="apellido" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">El Apellido debe tener máximo caracteres y solo se admiten mayúsculas y
           minúsculas.</p>
       </div>
       <div class="formulario__grupo" id="grupo__correo">
-        <label class="formulario__label">Correo Electrónico</label>
+        <label for="correo" class="formulario__label">Correo Electrónico</label>
         <div class="formulario__grupo-input">
-          <input type="email" class="formulario__input" name="correo" id="correo" placeholder="tuemail@gmail.com">
+          <input type="email" class="formulario__input" name="correo" id="correo" placeholder="tuemail@gmail.com" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">El correo debe tener mÍnimo 4 caracteres.</p>
       </div>
       <div class="formulario__grupo" id="grupo__password">
-        <label class="formulario__label">Contraseña</label>
+        <label for="password" class="formulario__label">Contraseña</label>
         <div class="formulario__grupo-input">
-          <input type="password" class="formulario__input" name="password" id="password">
+          <input type="password" class="formulario__input" name="password" id="password" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">La contraseña debe ser de 4 a 8 dígitos</p>
       </div>
       <div class="formulario__grupo" id="grupo__password2">
-        <label class="formulario__label">Repetir la contraseña</label>
+        <label for="password2" class="formulario__label">Repetir la contraseña</label>
         <div class="formulario__grupo-input">
-          <input type="password" class="formulario__input" name="password2" id="password2">
+          <input type="password" class="formulario__input" name="password2" id="password2" required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error">Las contraseñas no coinciden.</p>
