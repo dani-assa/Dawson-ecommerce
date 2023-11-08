@@ -24,14 +24,14 @@ const renderProducts = async () => {
     products.forEach((product) => {
       const $tr = document.createElement("tr");
       $tr.innerHTML = `
-          <td>${product.name}</td>
-          <td>${product.price}</td>
+          <td class="fs-6">${product.name}</td>
+          <td class="fs-6">$${product.price}</td>
           <td><button class="btn btn-light lookPhoto" id="lookPhoto" data-productid="${
             product.id
           }"><i class="fa-solid fa-eye fa-xs" style="color: #d8aa54;"></i></button>
           </td>
-          <td>${product.categories}</td>
-          <td>${product.stock}</td>
+          <td class="fs-6">${product.categories}</td>
+          <td class="fs-6">${product.stock}</td>
           <td>
               <button class="btn btn-danger" id="eliminar" data-productid="${
                 product.id

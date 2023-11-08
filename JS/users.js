@@ -20,11 +20,11 @@ const renderUsers = async () => {
     usersFiltered.forEach((user) => {
       const $tr = document.createElement("tr");
       $tr.innerHTML = `
-            <td>${user.email}</td>
-            <td>${user.name}</td>
-            <td>${user.lastName}</td>
-            <td>${user.role}</td>
-            <td>${user.status === true ? "Activo" : "Inactivo"}</td>
+            <td class="fs-6">${user.email}</td>
+            <td class="fs-6">${user.name}</td>
+            <td class="fs-6">${user.lastName}</td>
+            <td class="fs-6">${user.role}</td>
+            <td class="fs-6">${user.status === true ? "Activo" : "Inactivo"}</td>
             <td>
                 <input
                     class="form-check-input"
