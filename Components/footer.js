@@ -9,7 +9,7 @@ const footer1 = () => {
     </div>
       <ul class="list-unstyled d-flex align-items-center mt-lg-3">
         <li class="me-3 "><a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover opacity-75" href="#" onclick="window.location.pathname = './index.html'">Página principal</a></li>
-        <li><a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover opacity-75" href="#">Sobre nosotros</a></li>
+        <li><a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover opacity-75" href="./views/nosotros.html">Sobre nosotros</a></li>
       </ul>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex ulIcons">
       <li class="ms-lg-3 liIcons"><a class="text-light iconRedes" href="#" onclick="window.location.pathname = '../views/error404.html'"><svg class="bi" width="24" height="24"><img id="logoTw" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAVlJREFUSEvlVUtug0AMtTVcoBKDlB05SdOTNJyk6UlKThJ6ks4uUgYpF5joVaZA+czwiZRVvALG42c/PxumBxs/OD49KYC1dsdEHwSkQjGYj1rrw/V8Tl0U7eW5ob5HUWntSTmXvWw2JtSb8nLZE/PX6BwwxJwSkMVJkocAQIBpMvKBlNYiKAwBISrq+4X4tRVIebco+mkug+gzci7vVhPMvoMIojetdRW8ByAvQhER7Vr/v7INAUcwGxbOffS0WSGPkyTrVtjvgfArzRMu7zFMAAwpuif+sMHzFK1EUc5thwrsUVRVodTpXopirUebYfShGiLgnZilH8ttoH+viiolhQZpCgowcZJsfS7eZWetPVSrYKENtR+Uafeg2SuzQAFqghRJYDm8KSXzMNmHqcxHACsVVMwtRW8FNYisitd6M/5PNLMB0fdwP8216Un/aHO0LJLpmiBTvr/lIqkZieUtLwAAAABJRU5ErkJggg=="/></use></svg></a></li>
