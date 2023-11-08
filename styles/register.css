@@ -81,9 +81,9 @@ main {
     margin: 0 10px;
 }
 
-.formulario__grupo-terminos {
+/* .formulario__grupo-terminos {
     text-align: center;
-}
+} */
 
 .formulario__grupo-terminos, .formulario__mensaje, .formulario__grupo-btn-enviar {
     grid-column: span 2;

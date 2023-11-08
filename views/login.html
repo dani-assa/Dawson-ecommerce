@@ -1,105 +1,74 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dawson</title>
-    <link rel="icon" href="../Resources/logoMinuatura.jpg">
-    <link rel="stylesheet" href="../styles/index.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body id="bodyLogin">
-    <header></header>
-    <main>
-      <div class="container" id="login">
-        <h2>Iniciar sesión</h2>
-        <div class="row justify-content-center">
-          <div class=" mt-2">
-            <form id="loginForm">
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  placeholder="Email"
-                  required
-                  maxlength="30"
-                  minlength="7"
-                  name="email"
-                />
-                <div
-                  class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
-                  Usuario o contraseña incorrecto.
-                </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dawson</title>
+  <link rel="icon" href="../Resources/logoMinuatura.jpg">
+  <link rel="stylesheet" href="../styles/index.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body id="bodyLogin">
+  <header></header>
+  <main>
+    <div class="container" id="login">
+      <h2>Iniciar sesión</h2>
+      <div class="row justify-content-center">
+        <div class=" mt-2">
+          <form id="loginForm">
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email"
+                required maxlength="30" minlength="7" name="email" />
+              <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
+                Usuario o contraseña incorrecto.
               </div>
-              <div class="mb-3">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="Contraseña"
-                  required
-                />
-                <div
-                  class="invalid-feedback animate__animated animate__headShake mjeIncorrecto"
-                >
-                  Usuario o contraseña incorrecto.
-                </div>
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <input
-                      class="mt-2"
-                      type="checkbox"
-                      name="showPassword"
-                      id="showPassword"
-                    />
-                    <label for="showPassword" id="labelPassword">Mostrar contraseña</label>
-                  </div>
-                  <a href="../views/error404.html" class=" link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover mt-2" id="forgotPassword">Olvidaste la contraseña?</a>
-                </div>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
+                required />
+              <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
+                Usuario o contraseña incorrecto.
               </div>
-              <button
-                type="submit"
-                class="btn btn-primary w-100"
-                id="btnIniciarSesion">
-                Iniciar sesión
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="border-top mt-3 d-flex flex-column justify-content-center">
-          <h6 class="text-center">o inicia sesión con</h6>
-          <div class="d-flex justify-content-center">
-            <button class="btn btn-dark me-2"><a href="../views/error404.html"><img style="width: 20px;" src="https://i.ibb.co/f17x8mb/buscar.png" alt="logoGoogle"></a></button>
-            <button class="btn btn-dark"><a href="../views/error404.html"><img style="width: 20px;" src="https://i.ibb.co/hHVxfL2/meta.png" alt="logoMeta"></a></button>
-          </div>
-          <div class="d-flex justify-content-center mt-3">
-            <p>Aún no tienes cuenta? <a href="../views/register.html" class="fw-semibold link-warning">Registrate</a></p>
-          </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <input class="mt-2" type="checkbox" name="showPassword" id="showPassword" />
+                  <label for="showPassword" id="labelPassword">Mostrar contraseña</label>
+                </div>
+                <a href="../views/error404.html"
+                  class=" link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover mt-2"
+                  id="forgotPassword">Olvidaste la contraseña?</a>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" id="btnIniciarSesion">
+              Iniciar sesión
+            </button>
+          </form>
         </div>
       </div>
-    </main>
-    <footer></footer>
-    <script type="module" src="../JS/login.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      <div class="border-top mt-3 d-flex flex-column justify-content-center">
+        <h6 class="text-center">o inicia sesión con</h6>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-dark me-2"><a href="../views/error404.html"><img style="width: 20px;"
+                src="https://i.ibb.co/f17x8mb/buscar.png" alt="logoGoogle"></a></button>
+          <button class="btn btn-dark"><a href="../views/error404.html"><img style="width: 20px;"
+                src="https://i.ibb.co/hHVxfL2/meta.png" alt="logoMeta"></a></button>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <p>Aún no tienes cuenta? <a href="../views/register.html" class="fw-semibold link-warning">Registrate</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  <script type="module" src="../JS/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
