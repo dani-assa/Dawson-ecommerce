@@ -3,8 +3,9 @@ import { getFormData } from "./utils.js";
 import { endpoints } from "../utils/endpoints.js";
 import footer1 from "../Components/footer.js";
 
-document.addEventListener('DOMContentLoaded', () => navbar ());
-document.addEventListener('DOMContentLoaded', () => footer1 ());
+document.addEventListener('DOMContentLoaded', () => 
+navbar (),
+footer1());
 
 const login = async(e) => {
   e.preventDefault();

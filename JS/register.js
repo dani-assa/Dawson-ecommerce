@@ -37,7 +37,6 @@ const formulario = async (e) => {
     email,
     contraseña,
   };
-console.log(user);
   try {
     const response = await fetch(`${endpoints.users}`, {
       method: "POST",
@@ -115,13 +114,13 @@ const validarCampo = (expresion, input, campo) => {
         campos[campo] = true;
         console.log("Funciona");
     } else {
-           document.getElementById(`grupo__${campo}`).classList.add("formulario__grupo-incorrecto");
-           document.getElementById(`grupo__${campo}`).classList.remove("formulario__grupo-correcto");
-           document.querySelector(`#grupo__${campo} i`).classList.add("fa-times-circle");
-           document.querySelector(`#grupo__${campo} i`).classList.remove("fa-check-circle");
-           document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add("formulario__input-error-activo");
-           campos[campo] = false;
-           console.log("Funciona");
+      document.getElementById(`grupo__${campo}`).classList.add("formulario__grupo-incorrecto");
+      document.getElementById(`grupo__${campo}`).classList.remove("formulario__grupo-correcto");
+      document.querySelector(`#grupo__${campo} i`).classList.add("fa-times-circle");
+      document.querySelector(`#grupo__${campo} i`).classList.remove("fa-check-circle");
+      document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add("formulario__input-error-activo");
+      campos[campo] = false;
+      console.log("Funciona");
         }
 }
 
@@ -183,3 +182,5 @@ $formulario.addEventListener("submit", (e) => {
         document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
     }
 });
+
+$formulario.addEventListener('submit', formulario);
