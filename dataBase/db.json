@@ -74,7 +74,7 @@
       "categories": "Remeras",
       "description": "Remera corte basico confeccionada 100% en algodon.La tonalidad del mismo color puede variar de prenda a prenda.",
       "stock": 35,
-      "available": false,
+      "available": true,
       "id": 6
     },
     {

@@ -16,7 +16,7 @@ const navbar = () => {
             <a class="nav-link " aria-current="page" href="#" onclick="window.location.pathname = './index.html'">Página principal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./views/nosotros.html">Sobre nosotros</a>
+            <a class="nav-link" href="#" onclick="window.location.pathname = './views/nosotros.html'">Sobre nosotros</a>
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0 d-lg-none">
