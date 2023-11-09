@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () =>
 navbar (),
 footer1());
 
+
+
 const getUsers = async () => {
   try {
     const response = await fetch(`${endpoints.users}`);
@@ -36,8 +38,16 @@ const register = async (e) => {
   contraseña.classList.remove('is-invalid');
   repetirContraseña.classList.remove('is-invalid');
   check.classList.remove('is-invalid');
-
+  
   try {
+    if (nombre.value === "" && apellido.value === "" && email.value === "" && contraseña.value === "" && check.checked === false) {
+      nombre.classList.add('is-invalid');
+      apellido.classList.add('is-invalid');
+      email.classList.add('is-invalid');
+      contraseña.classList.add('is-invalid');
+      check.classList.add('is-invalid');
+      return;
+    }
     if (nombre.value === "") { 
       nombre.classList.add('is-invalid');
       return;
@@ -82,7 +92,12 @@ const register = async (e) => {
   } catch (error) {
     console.error(error);
   };
-  
+  Swal.fire({
+    icon: "success",
+    title: "Usuario registado correctamente",
+    text: "Something went wrong!",
+    footer: '<a href="../views/login.html">Iniciar sesión</a>'
+  });
 };
 
 $formulario.addEventListener('submit', register);

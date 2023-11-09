@@ -23,65 +23,52 @@
   <header></header>
   <main>
     <!-- FORMULARIO DE REGISTRO -->
-
     <form class="formulario needs-validation" novalidate" id="formulario">
       <!--GRUPO DE USUARIO - -->
       <div class="formulario__grupo" id="grupo__nombre">
         <div class="formulario__grupo-input">
           <label for="nombre" class="formulario__label form-label">Nombre <span style="color: #ff0000;">*</span></label>
           <input type="text" class="formulario__input form-control" name="nombre" id="nombre" >
-          <!-- <i class="formulario__validacion-estado fas fa-times-circle"></i> -->
           <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
             Es necesario completar el Nombre.
           </div>
         </div>
-        <!-- <p class="formulario__input-error">El Nombre debe tener máximo de 8 caracteres y solo se admiten mayúsculas y
-          minúsculas.</p> -->
       </div>
       <div class="formulario__grupo" id="grupo__apellido">
         <div class="formulario__grupo-input">
           <label for="apellido" class="formulario__label form-label">Apellido <span style="color: #ff0000;">*</span></label>
           <input type="text" class="formulario__input form-control" name="apellido" id="apellido" >
-          <!-- <i class="formulario__validacion-estado fas fa-times-circle"></i> -->
           <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
             Es necesario completar el Apellido.
           </div>
         </div>
-        <!-- <p class="formulario__input-error">El Apellido debe tener máximo caracteres y solo se admiten mayúsculas y
-          minúsculas.</p> -->
       </div>
       <div class="formulario__grupo" id="grupo__correo">
         <div class="formulario__grupo-input has-validation d-flex flex-column">
           <label for="correo" class="formulario__label form-label">Email <span style="color: #ff0000;">*</span></label>
           <input type="email" class="formulario__input form-control" name="correo" id="correo" placeholder="tuemail@gmail.com" >
-          <!-- <i class="formulario__validacion-estado fas fa-times-circle"></i> -->
           <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
             Es necesario completar el Email.
           </div>
         </div>
-        <!-- <p class="formulario__input-error">El correo debe tener mÍnimo 4 caracteres.</p> -->
       </div>
       <div class="formulario__grupo" id="grupo__password">
         <div class="formulario__grupo-input">
           <label for="password" class="formulario__label form-label">Contraseña <span style="color: #ff0000;">*</span></label>
           <input type="password" class="formulario__input form-control" name="password" id="password" >
-          <!-- <i class="formulario__validacion-estado fas fa-times-circle"></i> -->
           <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
             Es necesario completar la contraseña.
           </div>
         </div>
-        <!-- <p class="formulario__input-error">La contraseña debe ser de 4 a 8 dígitos</p> -->
       </div>
       <div class="formulario__grupo" id="grupo__password2">
         <div class="formulario__grupo-input">
           <label for="password2" class="formulario__label form-label">Repetir la contraseña <span style="color: #ff0000;">*</span></label>
           <input type="password" class="formulario__input form-control" name="password2" id="password2" >
-          <!-- <i class="formulario__validacion-estado fas fa-times-circle"></i> -->
           <div class="invalid-feedback animate__animated animate__headShake mjeIncorrecto">
             Las contraseñas no coinciden.
           </div>
         </div>
-        <!-- <p class="formulario__input-error">Las contraseñas no coinciden.</p> -->
       </div>
       <div class="formulario__grupo formulario__grupo-terminos form-check" id="grupo__terminos">
         <label for="terminos" class="formulario__label form-check-label">
@@ -95,14 +82,8 @@
       <div>
         <p><span style="color: #ff0000;">*</span> Estos campos son obligatorios.</p>
       </div>
-      <!-- <div class="formulario__mensaje" id="formulario__mensaje">
-        <p><i class="fas fa-exclamation-circle"> <b>Error:</b> Debes completar todos los campos</i></p>
-      </div> -->
       <div class="formulario__grupo formulario__grupo-btn-enviar">
-        <!-- <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">El formulario se envió correctamente</p> -->
-        <input class="formulario__btn" type="submit" value="Enviar"> <a
-          href="#"></a>
-        <!-- <button type="submit" class="formulario__btn">Enviar</button> -->
+        <button type="submit" class="formulario__btn">Enviar</button>
       </div>
     </form>
   </main>
