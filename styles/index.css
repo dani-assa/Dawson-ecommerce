@@ -84,10 +84,6 @@ main {
   margin-top: 80px;
 }
 
-#email,
-#password {
-  background: transparent;
-}
 
 #labelPassword,
 #forgotPassword {
